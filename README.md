@@ -12,4 +12,4 @@
 ## Getting Started
 1. Clone this repo inside `/wp-content/themes/`:
    ```bash
-   git clone https://github.com/yourusername/versana-theme.git
+   git clone https://github.com/junaidte14/versana.git
