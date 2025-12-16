@@ -1,0 +1,202 @@
+/**
+ * Versana Admin Styles
+ *
+ * @package Versana
+ * @since 1.0.0
+ */
+
+/* Main Wrapper */
+.versana-options-wrap {
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+/* Header Section */
+.versana-options-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #1A73E8;
+}
+
+.versana-options-header .description {
+    margin: 0;
+    flex: 1;
+}
+
+.versana-options-header .button-primary {
+    margin-left: 20px;
+}
+
+/* Tab Navigation */
+.versana-options-wrap .nav-tab-wrapper {
+    margin: 20px 0 30px 0;
+    border-bottom: 1px solid #ccd0d4;
+}
+
+.versana-options-wrap .nav-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.versana-options-wrap .nav-tab .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Tab Content */
+.versana-tab-content {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.versana-tab-content h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1A73E8;
+}
+
+.versana-tab-content > .description {
+    font-size: 14px;
+    margin: 10px 0 20px;
+    padding: 12px;
+    background: #e7f5ff;
+    border-left: 4px solid #2196F3;
+    border-radius: 4px;
+}
+
+/* Form Table */
+.versana-options-wrap .form-table {
+    margin-top: 20px;
+}
+
+.versana-options-wrap .form-table th {
+    width: 250px;
+    padding: 20px 10px 20px 0;
+    vertical-align: top;
+    font-weight: 600;
+}
+
+.versana-options-wrap .form-table td {
+    padding: 15px 10px;
+}
+
+.versana-options-wrap .form-table label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.versana-options-wrap .form-table input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Field Descriptions */
+.versana-options-wrap .description {
+    font-style: italic;
+    color: #646970;
+    margin-top: 8px;
+    display: block;
+    line-height: 1.5;
+}
+
+/* Input Fields */
+.versana-options-wrap input[type="text"],
+.versana-options-wrap input[type="number"] {
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.versana-options-wrap .regular-text {
+    width: 400px;
+    max-width: 100%;
+}
+
+/* Code Editor */
+textarea.code {
+    font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: #f6f7f7;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+/* Submit Button */
+.versana-options-wrap .submit {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dcdcde;
+}
+
+/* Reset Section */
+.versana-reset-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+}
+
+.versana-reset-section h3 {
+    margin-top: 0;
+    color: #856404;
+}
+
+.versana-reset-section .description {
+    color: #856404;
+}
+
+.versana-reset-options {
+    margin-top: 10px;
+}
+
+/* Settings Saved Message */
+.versana-options-wrap .updated {
+    margin: 20px 0;
+}
+
+/* Color Picker */
+.wp-picker-container {
+    display: inline-block;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .versana-options-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .versana-options-header .button-primary {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .versana-options-wrap .form-table th,
+    .versana-options-wrap .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .versana-options-wrap .form-table th {
+        padding-bottom: 5px;
+    }
+    
+    .versana-options-wrap .regular-text {
+        width: 100%;
+    }
+}
