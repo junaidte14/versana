@@ -100,3 +100,86 @@ function versana_enqueue_admin_assets( $hook ) {
     );
 }
 add_action( 'admin_enqueue_scripts', 'versana_enqueue_admin_assets' );
+
+/**
+ * Get registered option tabs
+ *
+ * This is the key function for extensibility!
+ * Child themes and plugins can add their own tabs.
+ *
+ * @return array Array of tabs
+ */
+function versana_get_option_tabs() {
+    $tabs = array(
+        'general' => array(
+            'title'    => __( 'General', 'versana' ),
+            'icon'     => 'dashicons-admin-settings',
+            'callback' => 'versana_render_general_tab',
+            'priority' => 10,
+        ),
+        'header' => array(
+            'title'    => __( 'Header', 'versana' ),
+            'icon'     => 'dashicons-align-center',
+            'callback' => 'versana_render_header_tab',
+            'priority' => 20,
+        ),
+        'footer' => array(
+            'title'    => __( 'Footer', 'versana' ),
+            'icon'     => 'dashicons-align-full-width',
+            'callback' => 'versana_render_footer_tab',
+            'priority' => 30,
+        ),
+        'blog' => array(
+            'title'    => __( 'Blog', 'versana' ),
+            'icon'     => 'dashicons-admin-post',
+            'callback' => 'versana_render_blog_tab',
+            'priority' => 40,
+        ),
+        'performance' => array(
+            'title'    => __( 'Performance', 'versana' ),
+            'icon'     => 'dashicons-performance',
+            'callback' => 'versana_render_performance_tab',
+            'priority' => 50,
+        ),
+        'integrations' => array(
+            'title'    => __( 'Integrations', 'versana' ),
+            'icon'     => 'dashicons-admin-links',
+            'callback' => 'versana_render_integrations_tab',
+            'priority' => 60,
+        ),
+        'advanced' => array(
+            'title'    => __( 'Advanced', 'versana' ),
+            'icon'     => 'dashicons-admin-generic',
+            'callback' => 'versana_render_advanced_tab',
+            'priority' => 70,
+        ),
+    );
+    
+    /**
+     * Filter theme option tabs
+     *
+     * This allows child themes and plugins to add custom tabs!
+     *
+     * Example usage in child theme:
+     * add_filter( 'versana_option_tabs', 'child_add_shop_tab' );
+     * function child_add_shop_tab( $tabs ) {
+     *     $tabs['shop'] = array(
+     *         'title'    => __( 'Shop Settings', 'child-theme' ),
+     *         'icon'     => 'dashicons-cart',
+     *         'callback' => 'child_render_shop_tab',
+     *         'priority' => 45, // Between Blog (40) and Performance (50)
+     *     );
+     *     return $tabs;
+     * }
+     *
+     * @param array $tabs Array of tab configurations
+     */
+    $tabs = apply_filters( 'versana_option_tabs', $tabs );
+    
+    // Sort by priority
+    uasort( $tabs, function( $a, $b ) {
+        return ( $a['priority'] ?? 999 ) - ( $b['priority'] ?? 999 );
+    } );
+    
+    return $tabs;
+}

@@ -28,10 +28,6 @@
     flex: 1;
 }
 
-.versana-options-header .button-primary {
-    margin-left: 20px;
-}
-
 /* Tab Navigation */
 .versana-options-wrap .nav-tab-wrapper {
     margin: 20px 0 30px 0;
@@ -171,6 +167,41 @@ textarea.code {
 /* Color Picker */
 .wp-picker-container {
     display: inline-block;
+}
+
+/* Info Card */
+.versana-info-card {
+    background: #e7f5ff;
+    border-left: 4px solid #2196F3;
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.versana-info-card h4 {
+    margin: 0 0 8px 0;
+    color: #1565C0;
+}
+
+.versana-info-card p {
+    margin: 0;
+    color: #424242;
+    font-size: 14px;
+}
+
+/* Quick Links */
+.versana-header-info {
+    flex: 1;
+}
+
+.versana-quick-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.versana-quick-links .button .dashicons {
+    margin-top: 4px;
 }
 
 /* Responsive */

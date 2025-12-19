@@ -22,26 +22,38 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function versana_get_default_options() {
     $defaults = array(
-        // Google Fonts Tab
-        'google_fonts_enabled'     => false,
-        'heading_font_google'      => '',
-        'body_font_google'         => '',
-        'preload_fonts'            => true,
-        'font_display_swap'        => true,
+        // General Tab
+        'enable_breadcrumbs'       => true,
+        'enable_dark_mode'         => false,
+
+        // Header Tab
+        'header_layout'            => 'default',
+        'enable_sticky_header'     => false,
+        'enable_header_search'     => true,
+        'enable_header_cta'        => false,
+        'mobile_menu_style'        => 'default',
+
+        // Footer Tab
+        'footer_columns'           => '4',
+        'enable_footer_widgets'    => true,
+        'enable_back_to_top'       => true,
+        'footer_copyright'         => '',
+
+        // Blog Tab
+        'blog_layout'              => 'grid',
+        'blog_sidebar_position'    => 'right',
+        'archive_layout'           => 'inherit',
+        'enable_reading_time'      => true,
+        'enable_share_buttons'     => true,
+        'enable_author_box'        => true,
+        'enable_related_posts'     => true,
+        'enable_toc'               => false,
         
         // Performance Tab
         'lazy_load_images'         => true,
-        'preload_critical_fonts'   => true,
         'disable_emojis'           => false,
         'disable_embeds'           => false,
         'remove_query_strings'     => false,
-        
-        // Features Tab
-        'enable_breadcrumbs'       => false,
-        'enable_reading_time'      => false,
-        'enable_share_buttons'     => false,
-        'enable_toc'               => false,
-        'enable_sticky_header'     => false,
         
         // Integrations Tab
         'google_analytics_id'      => '',

@@ -23,19 +23,33 @@ function versana_sanitize_options( $input ) {
     
     // Boolean fields (checkboxes)
     $boolean_fields = array(
-        'google_fonts_enabled',
-        'preload_fonts',
-        'font_display_swap',
+        // General
+        'enable_breadcrumbs',
+        'enable_dark_mode',
+        
+        // Header
+        'enable_sticky_header',
+        'enable_header_search',
+        'enable_header_cta',
+        
+        // Footer
+        'enable_footer_widgets',
+        'enable_back_to_top',
+        
+        // Blog
+        'enable_reading_time',
+        'enable_share_buttons',
+        'enable_author_box',
+        'enable_related_posts',
+        'enable_toc',
+        
+        // Performance
         'lazy_load_images',
-        'preload_critical_fonts',
         'disable_emojis',
         'disable_embeds',
         'remove_query_strings',
-        'enable_breadcrumbs',
-        'enable_reading_time',
-        'enable_share_buttons',
-        'enable_toc',
-        'enable_sticky_header',
+        
+        // Advanced
         'enable_developer_mode',
         'disable_gutenberg_css',
     );
@@ -44,10 +58,26 @@ function versana_sanitize_options( $input ) {
         $sanitized[ $field ] = isset( $input[ $field ] ) ? (bool) $input[ $field ] : false;
     }
     
+    // Select fields with allowed values
+    $select_fields = array(
+        'header_layout'          => array( 'default', 'centered', 'minimal' ),
+        'mobile_menu_style'      => array( 'default', 'overlay', 'drawer' ),
+        'footer_columns'         => array( '1', '2', '3', '4' ),
+        'blog_layout'            => array( 'grid', 'list', 'masonry' ),
+        'blog_sidebar_position'  => array( 'left', 'right', 'none' ),
+        'archive_layout'         => array( 'inherit', 'grid', 'list' ),
+    );
+    
+    foreach ( $select_fields as $field => $allowed_values ) {
+        if ( isset( $input[ $field ] ) ) {
+            $value = sanitize_text_field( $input[ $field ] );
+            $sanitized[ $field ] = in_array( $value, $allowed_values, true ) ? $value : $allowed_values[0];
+        }
+    }
+    
     // Text fields
     $text_fields = array(
-        'heading_font_google',
-        'body_font_google',
+        'footer_copyright',
         'google_analytics_id',
         'facebook_pixel_id',
         'google_tag_manager_id',
@@ -59,12 +89,12 @@ function versana_sanitize_options( $input ) {
         }
     }
     
-    // Custom CSS
+    // Custom CSS (strip tags but allow CSS)
     if ( isset( $input['custom_css'] ) ) {
         $sanitized['custom_css'] = wp_strip_all_tags( $input['custom_css'] );
     }
     
-    // Scripts (only for administrators)
+    // Scripts (only for administrators with unfiltered_html capability)
     if ( current_user_can( 'unfiltered_html' ) ) {
         if ( isset( $input['header_scripts'] ) ) {
             $sanitized['header_scripts'] = $input['header_scripts'];
@@ -76,6 +106,8 @@ function versana_sanitize_options( $input ) {
     
     /**
      * Filter sanitized options
+     *
+     * Allows child themes to add custom sanitization.
      *
      * @param array $sanitized Sanitized options
      * @param array $input Raw input
