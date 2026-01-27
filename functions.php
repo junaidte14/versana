@@ -46,7 +46,8 @@ if ( file_exists( $theme_options_path . 'options-output.php' ) ) {
     require_once $theme_options_path . 'options-output.php';
 }
 
-// Google Fonts integration (will be built in Episode 20)
-if ( file_exists( $theme_options_path . 'options-google-fonts.php' ) ) {
-    require_once $theme_options_path . 'options-google-fonts.php';
-}
+// Include enqueue functions
+require_once get_template_directory() . '/inc/enqueue.php';
+
+// Include template functions
+require_once get_template_directory() . '/inc/template-functions.php';

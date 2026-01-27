@@ -1,0 +1,46 @@
+/**
+ * Header Styles - WordPress Sticky Header Implementation
+ */
+
+/* Base header styles */
+.site-header {
+    position: relative;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--wp--preset--color--primary);
+    width: var(--scroll-progress, 0%);
+    transition: width 0.1s ease;
+}
+
+/* Sticky header active state */
+.has-sticky-header.header-is-stuck .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--wp--preset--color--base, #ffffff);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.has-sticky-header.header-is-stuck {
+    padding-top: var(--header-height, 80px);
+}
