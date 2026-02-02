@@ -3,11 +3,6 @@
   "version": 2,
   "customTemplates": [
     {
-      "name": "blocks-demo",
-      "title": "Blocks Demo",
-      "postTypes": ["page"]
-    },
-    {
       "name": "blog",
       "title": "Custom Blog",
       "postTypes": ["page"]

@@ -198,9 +198,6 @@ function versana_render_header_tab() {
                             <option value="centered" <?php selected( versana_get_option( 'header_layout' ), 'centered' ); ?>>
                                 <?php esc_html_e( 'Centered (Logo & Menu Centered)', 'versana' ); ?>
                             </option>
-                            <option value="minimal" <?php selected( versana_get_option( 'header_layout' ), 'minimal' ); ?>>
-                                <?php esc_html_e( 'Minimal (Logo Only, Hamburger Menu)', 'versana' ); ?>
-                            </option>
                         </select>
                         <p class="description">
                             <?php esc_html_e( 'Choose your header layout style.', 'versana' ); ?>
@@ -261,31 +258,6 @@ function versana_render_header_tab() {
                         </label>
                         <p class="description">
                             <?php esc_html_e( 'Configure button in Site Editor → Header template.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <!-- Mobile Menu Style -->
-                <tr>
-                    <th scope="row">
-                        <label for="mobile_menu_style">
-                            <?php esc_html_e( 'Mobile Menu Style', 'versana' ); ?>
-                        </label>
-                    </th>
-                    <td>
-                        <select id="mobile_menu_style" name="versana_theme_options[mobile_menu_style]">
-                            <option value="overlay" <?php selected( versana_get_option( 'mobile_menu_style' ), 'overlay' ); ?>>
-                                <?php esc_html_e( 'Full Screen Overlay', 'versana' ); ?>
-                            </option>
-                            <option value="drawer" <?php selected( versana_get_option( 'mobile_menu_style' ), 'drawer' ); ?>>
-                                <?php esc_html_e( 'Slide-in Drawer', 'versana' ); ?>
-                            </option>
-                            <option value="default" <?php selected( versana_get_option( 'mobile_menu_style' ), 'default' ); ?>>
-                                <?php esc_html_e( 'WordPress Default', 'versana' ); ?>
-                            </option>
-                        </select>
-                        <p class="description">
-                            <?php esc_html_e( 'Choose mobile menu behavior.', 'versana' ); ?>
                         </p>
                     </td>
                 </tr>

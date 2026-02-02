@@ -1,14 +1,26 @@
 /**
- * Header Styles - WordPress Sticky Header Implementation
+ * Header Styles
+ * Sticky Header + Layout Variations
+ *
+ * @package Versana
+ * @since 1.0.0
  */
 
-/* Base header styles */
+/* ==========================================================================
+   Base Header Styles
+   ========================================================================== */
+
 .site-header {
     position: relative;
     z-index: 999;
     transition: all 0.3s ease;
 }
 
+/* ==========================================================================
+   Sticky Header
+   ========================================================================== */
+
+/* Scroll progress indicator */
 .site-header::before {
     content: '';
     position: absolute;
@@ -20,7 +32,7 @@
     transition: width 0.1s ease;
 }
 
-/* Sticky header active state */
+/* Sticky header when stuck */
 .has-sticky-header.header-is-stuck .site-header {
     position: fixed;
     top: 0;
@@ -41,6 +53,77 @@
     }
 }
 
+/* Prevent content jump when header becomes fixed */
 .has-sticky-header.header-is-stuck {
     padding-top: var(--header-height, 80px);
+}
+
+/* ==========================================================================
+   Header Layout: Centered (Logo & Menu Centered, Stacked)
+   ========================================================================== */
+
+.header-layout-centered .site-header .wp-block-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--wp--preset--spacing--50, 2rem);
+    text-align: center;
+}
+
+/* Center the logo */
+.header-layout-centered .wp-block-site-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center the site title */
+.header-layout-centered .wp-block-site-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center the navigation */
+.header-layout-centered .wp-block-navigation {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center navigation items */
+.header-layout-centered .wp-block-navigation__container {
+    justify-content: center;
+}
+
+/* Mobile: Maintain centered layout */
+@media (max-width: 781px) {
+    .header-layout-centered .site-header .wp-block-group {
+        gap: var(--wp--preset--spacing--40, 1.5rem);
+    }
+}
+
+/* ==========================================================================
+   Responsive Refinements
+   ========================================================================== */
+
+/* Ensure all layouts work with WordPress default mobile menu */
+@media (max-width: 781px) {
+    /* Ensure navigation toggle button is always accessible */
+    .wp-block-navigation__responsive-container-open {
+        display: flex;
+    }
+}
+
+/* ==========================================================================
+   Admin Bar Adjustment (for logged-in users)
+   ========================================================================== */
+
+/* When WordPress admin bar is present */
+.admin-bar.has-sticky-header.header-is-stuck .site-header {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar.has-sticky-header.header-is-stuck .site-header {
+        top: 46px;
+    }
 }

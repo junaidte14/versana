@@ -31,7 +31,6 @@ function versana_get_default_options() {
         'enable_sticky_header'     => false,
         'enable_header_search'     => true,
         'enable_header_cta'        => false,
-        'mobile_menu_style'        => 'default',
 
         // Footer Tab
         'footer_columns'           => '4',

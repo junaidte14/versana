@@ -60,8 +60,7 @@ function versana_sanitize_options( $input ) {
     
     // Select fields with allowed values
     $select_fields = array(
-        'header_layout'          => array( 'default', 'centered', 'minimal' ),
-        'mobile_menu_style'      => array( 'default', 'overlay', 'drawer' ),
+        'header_layout'          => array( 'default', 'centered' ),
         'footer_columns'         => array( '1', '2', '3', '4' ),
         'blog_layout'            => array( 'grid', 'list', 'masonry' ),
         'blog_sidebar_position'  => array( 'left', 'right', 'none' ),
