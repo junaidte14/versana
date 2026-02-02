@@ -287,57 +287,11 @@ function versana_render_footer_tab() {
     <div class="versana-tab-content">
         <h2><?php esc_html_e( 'Footer Settings', 'versana' ); ?></h2>
         <p class="description">
-            <?php esc_html_e( 'Configure footer layout and content.', 'versana' ); ?>
+            <?php esc_html_e( 'Configure footer appearance. Footer layout is controlled via Site Editor → Template Parts.', 'versana' ); ?>
         </p>
         
         <table class="form-table" role="presentation">
             <tbody>
-                <!-- Footer Columns -->
-                <tr>
-                    <th scope="row">
-                        <label for="footer_columns">
-                            <?php esc_html_e( 'Footer Columns', 'versana' ); ?>
-                        </label>
-                    </th>
-                    <td>
-                        <select id="footer_columns" name="versana_theme_options[footer_columns]">
-                            <option value="1" <?php selected( versana_get_option( 'footer_columns' ), '1' ); ?>>
-                                <?php esc_html_e( '1 Column', 'versana' ); ?>
-                            </option>
-                            <option value="2" <?php selected( versana_get_option( 'footer_columns' ), '2' ); ?>>
-                                <?php esc_html_e( '2 Columns', 'versana' ); ?>
-                            </option>
-                            <option value="3" <?php selected( versana_get_option( 'footer_columns' ), '3' ); ?>>
-                                <?php esc_html_e( '3 Columns', 'versana' ); ?>
-                            </option>
-                            <option value="4" <?php selected( versana_get_option( 'footer_columns' ), '4' ); ?>>
-                                <?php esc_html_e( '4 Columns', 'versana' ); ?>
-                            </option>
-                        </select>
-                        <p class="description">
-                            <?php esc_html_e( 'Number of widget columns in footer.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <!-- Footer Widget Areas -->
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Widget Areas', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_footer_widgets]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_footer_widgets', true ), true ); ?> />
-                            <?php esc_html_e( 'Enable footer widget areas', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Adds widget-ready areas to footer.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
                 
                 <!-- Back to Top Button -->
                 <tr>
@@ -353,12 +307,12 @@ function versana_render_footer_tab() {
                             <?php esc_html_e( 'Show back to top button', 'versana' ); ?>
                         </label>
                         <p class="description">
-                            <?php esc_html_e( 'Floating button to scroll to top. Appears after scrolling down.', 'versana' ); ?>
+                            <?php esc_html_e( 'Floating button appears after scrolling down. Clicking scrolls smoothly to top of page.', 'versana' ); ?>
                         </p>
                     </td>
                 </tr>
                 
-                <!-- Footer Copyright -->
+                <!-- Footer Copyright Text -->
                 <tr>
                     <th scope="row">
                         <label for="footer_copyright">
@@ -369,20 +323,55 @@ function versana_render_footer_tab() {
                         <input type="text" 
                                id="footer_copyright" 
                                name="versana_theme_options[footer_copyright]" 
-                               value="<?php echo esc_attr( versana_get_option( 'footer_copyright' ) ); ?>" 
-                               class="regular-text" />
+                               value="<?php echo esc_attr( versana_get_option( 'footer_copyright', '&copy; {year} ' . get_bloginfo( 'name' ) . '. All rights reserved.' ) ); ?>" 
+                               class="large-text" 
+                               placeholder="&copy; {year} {site_name}. All rights reserved." />
                         <p class="description">
-                            <?php esc_html_e( 'Enter your copyright text. You can use %year% to display the current year automatically.', 'versana' ); ?>
+                            <?php esc_html_e( 'Enter your copyright text. Use {year} for automatic year replacement and {site_name} for automatic site name display.', 'versana' ); ?><br>
+                            <?php //esc_html_e( 'Available shortcodes: [year], [site_name], [copyright]', 'versana' ); ?>
                         </p>
                     </td>
                 </tr>
+                
             </tbody>
         </table>
+        
+        <!-- Footer Template Instructions -->
+        <div class="versana-footer-info" style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #2271b1;">
+            <h3 style="margin-top: 0;"><?php esc_html_e( 'Footer Layout & Content', 'versana' ); ?></h3>
+            <p>
+                <?php esc_html_e( 'To customize your footer layout and content:', 'versana' ); ?>
+            </p>
+            <ol style="margin-left: 1.5rem;">
+                <li><strong><?php esc_html_e( 'Go to:', 'versana' ); ?></strong> <?php esc_html_e( 'Appearance → Editor → Template Parts → Footer', 'versana' ); ?></li>
+                <li><strong><?php esc_html_e( 'Edit:', 'versana' ); ?></strong> <?php esc_html_e( 'Add or modify columns, menus, social links, text', 'versana' ); ?></li>
+                <li><strong><?php esc_html_e( 'Use:', 'versana' ); ?></strong> <?php esc_html_e( 'Core WordPress blocks (Columns, Navigation, Social Links)', 'versana' ); ?></li>
+            </ol>
+            
+            <h4><?php esc_html_e( 'Available Shortcodes for Footer templates:', 'versana' ); ?></h4>
+            <ul style="margin-left: 1.5rem;">
+                <li><code>[year]</code> - <?php esc_html_e( 'Displays current year (e.g., 2026)', 'versana' ); ?></li>
+                <li><code>[site_name]</code> - <?php esc_html_e( 'Displays your site name', 'versana' ); ?></li>
+                <li><code>[copyright]</code> - <?php esc_html_e( 'Displays full copyright text from above', 'versana' ); ?></li>
+            </ul>
+            
+            <h4><?php esc_html_e( 'Example Usage:', 'versana' ); ?></h4>
+            <p style="background: white; padding: 1rem; border-radius: 4px; font-family: monospace;">
+                &copy; [year] [site_name]. <?php esc_html_e( 'All rights reserved.', 'versana' ); ?>
+            </p>
+            
+            <p style="margin-top: 1.5rem;">
+                <a href="<?php echo esc_url( admin_url( 'site-editor.php?path=/patterns' ) ); ?>" class="button button-primary">
+                    <span class="dashicons dashicons-edit" style="margin-top: 3px;"></span>
+                    <?php esc_html_e( 'Edit Footer Template', 'versana' ); ?>
+                </a>
+            </p>
+        </div>
         
         <?php
         /**
          * Action to add custom footer settings
-         * * Child themes can use this to add their own footer options.
+         * Child themes can use this to add their own footer options.
          */
         do_action( 'versana_footer_tab_settings' );
         ?>

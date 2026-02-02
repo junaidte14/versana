@@ -40,5 +40,24 @@ function versana_enqueue_dynamic_assets() {
             true
         );
     }
+    
+    // Footer CSS - Always load for consistent footer styling
+    wp_enqueue_style(
+        'versana-footer',
+        get_template_directory_uri() . '/assets/css/footer.css',
+        array(),
+        wp_get_theme()->get( 'Version' )
+    );
+    
+    // Footer JavaScript - Only if back-to-top is enabled
+    if ( versana_get_option( 'enable_back_to_top' ) ) {
+        wp_enqueue_script(
+            'versana-footer',
+            get_template_directory_uri() . '/assets/js/footer.js',
+            array(),
+            wp_get_theme()->get( 'Version' ),
+            true
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'versana_enqueue_dynamic_assets' );

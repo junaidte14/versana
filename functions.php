@@ -46,8 +46,23 @@ if ( file_exists( $theme_options_path . 'options-output.php' ) ) {
     require_once $theme_options_path . 'options-output.php';
 }
 
-// Include enqueue functions
+// Include core files
 require_once get_template_directory() . '/inc/enqueue.php';
-
-// Include template functions
 require_once get_template_directory() . '/inc/template-functions.php';
+require_once get_template_directory() . '/inc/footer-functions.php';
+
+/**
+ * Theme Setup
+ */
+function versana_theme_setup() {
+    
+    // Add theme support features
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'align-wide' );
+    add_theme_support( 'editor-styles' );
+    
+    // Enqueue editor styles
+    add_editor_style( 'assets/css/editor-style.css' );
+    
+}
+add_action( 'after_setup_theme', 'versana_theme_setup' );
