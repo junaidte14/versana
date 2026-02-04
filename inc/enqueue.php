@@ -52,6 +52,29 @@ function versana_enqueue_dynamic_assets() {
             wp_get_theme()->get( 'Version' )
         );
     }
+
+    /**
+     * Blog Specific Assets
+     * Loads on the main blog feed and individual post pages
+     */
+    if ( is_home() || is_singular( 'post' ) ) {
+        // Enqueue Blog CSS
+        wp_enqueue_style(
+            'versana-blog',
+            get_template_directory_uri() . '/assets/css/blog.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+
+        // Enqueue Blog JS
+        wp_enqueue_script(
+            'versana-blog',
+            get_template_directory_uri() . '/assets/js/blog.js',
+            array(), // Add 'jquery' here if your JS depends on it
+            wp_get_theme()->get( 'Version' ),
+            true
+        );
+    }
     
     // Footer CSS - Always load for consistent footer styling
     wp_enqueue_style(
