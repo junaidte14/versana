@@ -1,14 +1,86 @@
 <!-- wp:template-part {"slug":"header","theme":"versana","tagName":"header"} /-->
 
-<!-- wp:query {"query":{"perPage":10}} -->
-  <div class="wp-block-query">
-    <!-- wp:post-template -->
-      <!-- wp:post-title {"isLink":true} /-->
-      <!-- wp:post-excerpt /-->
-    <!-- /wp:post-template -->
-
-    <!-- wp:query-pagination /-->
-  </div>
-<!-- /wp:query -->
+<!-- wp:group {"tagName":"main","className":"blog-archive","layout":{"type":"constrained"}} -->
+<main class="wp-block-group blog-archive">
+    
+    <!-- wp:group {"className":"blog-header","align":"wide"} -->
+    <div class="wp-block-group blog-header alignwide">
+        <!-- wp:heading {"textAlign":"center","level":1,"className":"archive-title"} -->
+        <h1 class="wp-block-heading has-text-align-center archive-title">Latest Posts</h1>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"align":"center","className":"archive-description"} -->
+        <p class="has-text-align-center archive-description">Discover our latest articles, tutorials, and insights.</p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:group -->
+    
+    <!-- wp:group {"className":"blog-content-area","align":"wide","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group blog-content-area alignwide">
+        
+        <!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide","className":"blog-posts"} -->
+        <div class="wp-block-query alignwide blog-posts">
+            
+            <!-- wp:post-template {"className":"blog-post-grid"} -->
+                
+                <!-- wp:group {"className":"blog-post-card","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group blog-post-card">
+                    
+                    <!-- wp:post-featured-image {"isLink":true,"className":"post-thumbnail"} /-->
+                    
+                    <!-- wp:group {"className":"post-content","layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group post-content">
+                        
+                        <!-- wp:group {"className":"post-meta","layout":{"type":"flex","flexWrap":"wrap"}} -->
+                        <div class="wp-block-group post-meta">
+                            <!-- wp:post-terms {"term":"category","className":"post-category"} /-->
+                            <!-- wp:post-date {"fontSize":"small"} /-->
+                        </div>
+                        <!-- /wp:group -->
+                        
+                        <!-- wp:post-title {"isLink":true,"className":"post-title"} /-->
+                        
+                        <!-- wp:post-excerpt {"moreText":"Continue reading →","excerptLength":20,"className":"post-excerpt"} /-->
+                        
+                    </div>
+                    <!-- /wp:group -->
+                    
+                </div>
+                <!-- /wp:group -->
+                
+            <!-- /wp:post-template -->
+            
+            <!-- wp:group {"className":"blog-pagination","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group blog-pagination">
+                <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"className":"pagination-links"} -->
+                    <!-- wp:query-pagination-previous /-->
+                    <!-- wp:query-pagination-numbers /-->
+                    <!-- wp:query-pagination-next /-->
+                <!-- /wp:query-pagination -->
+            </div>
+            <!-- /wp:group -->
+            
+            <!-- wp:query-no-results -->
+                <!-- wp:group {"className":"blog-no-posts","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group blog-no-posts">
+                    <!-- wp:heading {"level":2} -->
+                    <h2>No posts found</h2>
+                    <!-- /wp:heading -->
+                    
+                    <!-- wp:paragraph -->
+                    <p>Start writing your first blog post to see it appear here.</p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            <!-- /wp:query-no-results -->
+            
+        </div>
+        <!-- /wp:query -->
+        
+    </div>
+    <!-- /wp:group -->
+    
+</main>
+<!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","theme":"versana","tagName":"footer"} /-->
