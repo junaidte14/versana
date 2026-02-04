@@ -40,6 +40,18 @@ function versana_enqueue_dynamic_assets() {
             true
         );
     }
+
+    /**
+     * Home Page Specific Assets
+     */
+    if ( is_front_page() ) {
+        wp_enqueue_style(
+            'versana-home',
+            get_template_directory_uri() . '/assets/css/home.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
     
     // Footer CSS - Always load for consistent footer styling
     wp_enqueue_style(
