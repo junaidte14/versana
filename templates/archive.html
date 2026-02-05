@@ -2,79 +2,97 @@
 
 <!-- wp:group {"tagName":"main","className":"blog-archive","layout":{"type":"constrained"}} -->
 <main class="wp-block-group blog-archive">
-    
-    <!-- wp:group {"className":"blog-header","align":"wide"} -->
-    <div class="wp-block-group blog-header alignwide">
-        <!-- wp:query-title {"type":"archive","textAlign":"center","className":"archive-title"} /-->
-        <!-- wp:term-description {"textAlign":"center","className":"archive-description"} /-->
-    </div>
-    <!-- /wp:group -->
-    
-    <!-- wp:group {"className":"blog-content-area","align":"wide","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group blog-content-area alignwide">
-        
-        <!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"displayLayout":{"type":"flex","columns":3},"align":"wide","className":"blog-posts"} -->
-        <div class="wp-block-query alignwide blog-posts">
-            
-            <!-- wp:post-template {"className":"blog-post-grid"} -->
-                
-                <!-- wp:group {"className":"blog-post-card","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group blog-post-card">
-                    
-                    <!-- wp:post-featured-image {"isLink":true,"className":"post-thumbnail"} /-->
-                    
-                    <!-- wp:group {"className":"post-content","layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group post-content">
-                        
-                        <!-- wp:group {"className":"post-meta","layout":{"type":"flex","flexWrap":"wrap"}} -->
-                        <div class="wp-block-group post-meta">
-                            <!-- wp:post-terms {"term":"category","className":"post-category"} /-->
-                            <!-- wp:post-date {"fontSize":"small"} /-->
-                        </div>
-                        <!-- /wp:group -->
-                        
-                        <!-- wp:post-title {"isLink":true,"className":"post-title"} /-->
-                        
-                        <!-- wp:post-excerpt {"moreText":"Continue reading →","excerptLength":20,"className":"post-excerpt"} /-->
-                        
-                    </div>
-                    <!-- /wp:group -->
-                    
-                </div>
-                <!-- /wp:group -->
-                
-            <!-- /wp:post-template -->
-            
-            <!-- wp:group {"className":"blog-pagination","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group blog-pagination">
-                <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"className":"pagination-links"} -->
-                    <!-- wp:query-pagination-previous /-->
-                    <!-- wp:query-pagination-numbers /-->
-                    <!-- wp:query-pagination-next /-->
-                <!-- /wp:query-pagination -->
+    <!-- wp:group {"align":"wide","className":"blog-archive-group","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide blog-archive-group">
+        <!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide","layout":{"type":"constrained"}} -->
+        <div class="wp-block-query alignwide">
+            <!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0"}}} -->
+            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} /-->
+
+            <!-- wp:group {"className":"post-meta"} -->
+            <div class="wp-block-group post-meta">
+                <!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-100"}}}}} /-->
+
+                <!-- wp:post-date {"format":"M j, Y","isLink":true,"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontSize":"0.875rem"}}} /-->
+
+                <!-- wp:post-author-name {"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontSize":"0.875rem"}}} /-->
             </div>
             <!-- /wp:group -->
-            
+
+            <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}},"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)","fontWeight":"700","lineHeight":"1.3"}}} /-->
+
+            <!-- wp:post-excerpt {"moreText":"Continue reading →","excerptLength":30,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} /-->
+            <!-- /wp:post-template -->
+
+            <!-- wp:query-pagination {"paginationArrow":"arrow","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+            <!-- wp:query-pagination-previous /-->
+
+            <!-- wp:query-pagination-numbers /-->
+
+            <!-- wp:query-pagination-next /-->
+            <!-- /wp:query-pagination -->
+
             <!-- wp:query-no-results -->
-                <!-- wp:group {"className":"blog-no-posts","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group blog-no-posts">
-                    <!-- wp:heading {"level":2} -->
-                    <h2>No posts found</h2>
-                    <!-- /wp:heading -->
-                    
-                    <!-- wp:paragraph -->
-                    <p>Try adjusting your search or filter to find what you're looking for.</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:group -->
+            <!-- wp:heading {"className":"wp-block-heading has-text-align-center"} -->
+            <h2 class="wp-block-heading has-text-align-center">No posts found</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Start creating your first blog post to see it appear here!</p>
+            <!-- /wp:paragraph -->
             <!-- /wp:query-no-results -->
-            
         </div>
         <!-- /wp:query -->
-        
+
+        <!-- wp:group {"align":"full","className":"blog-sidebar","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignfull blog-sidebar">
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Search</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search posts...","buttonText":"Search"} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Categories</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:categories {"showHierarchy":true,"showPostCounts":true} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Recent Posts</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:latest-posts {"displayPostDate":true,"displayFeaturedImage":true} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Tags</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:tag-cloud /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
-    
 </main>
 <!-- /wp:group -->
 

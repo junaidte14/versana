@@ -42,37 +42,15 @@ function versana_enqueue_dynamic_assets() {
     }
 
     /**
-     * Home Page Specific Assets
-     */
-    if ( is_front_page() ) {
-        wp_enqueue_style(
-            'versana-home',
-            get_template_directory_uri() . '/assets/css/home.css',
-            array(),
-            wp_get_theme()->get( 'Version' )
-        );
-    }
-
-    /**
      * Blog Specific Assets
-     * Loads on the main blog feed and individual post pages
+     * Load on: blog index, archives, search, single posts
      */
-    if ( is_home() || is_singular( 'post' ) ) {
-        // Enqueue Blog CSS
+    if ( is_home() || is_archive() || is_search() || is_singular( 'post' ) ) {
         wp_enqueue_style(
             'versana-blog',
             get_template_directory_uri() . '/assets/css/blog.css',
             array(),
             wp_get_theme()->get( 'Version' )
-        );
-
-        // Enqueue Blog JS
-        wp_enqueue_script(
-            'versana-blog',
-            get_template_directory_uri() . '/assets/js/blog.js',
-            array(), // Add 'jquery' here if your JS depends on it
-            wp_get_theme()->get( 'Version' ),
-            true
         );
     }
     
@@ -94,5 +72,6 @@ function versana_enqueue_dynamic_assets() {
             true
         );
     }
+
 }
 add_action( 'wp_enqueue_scripts', 'versana_enqueue_dynamic_assets' );

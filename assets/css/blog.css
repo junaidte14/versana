@@ -1,464 +1,629 @@
+main.front-page {
+    margin-top: 0;
+}
+
 /**
- * Blog Layouts - List, Grid, Masonry
- * 2026 Design: Clean, Modern, Pixel-Perfect
+ * Blog Layouts - Production Ready
+ * Maximizes Gutenberg/theme.json, minimal custom styles
  *
  * @package Versana
  * @since 1.0.0
  */
 
 /* ==========================================================================
-   Blog Archive Base Styles
+   Default List Layout - Gutenberg First
    ========================================================================== */
 
-.blog-archive {
-    padding: var(--wp--preset--spacing--60, 3rem) 0;
+/**
+ * Archive/Blog Container
+ * Uses theme.json spacing and colors
+ */
+.blog-archive{
+    padding-block: var(--wp--preset--spacing--60, 3rem);
+    margin-top: 0;
 }
 
-/* Blog post card - base styles for all layouts */
-.blog-post-card {
-    background: var(--wp--preset--color--base, #ffffff);
-    border-radius: 12px;
+/**
+ * Blog Header
+ * Leverages Gutenberg heading blocks
+ */
+.blog-header {
+    margin-block-end: var(--wp--preset--spacing--60, 3rem);
+    padding-block-end: var(--wp--preset--spacing--40, 2rem);
+    border-block-end: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+}
+
+/* ==========================================================================
+   Query Loop Posts - Default Stacked Layout
+   ========================================================================== */
+
+/**
+ * Post Template Container
+ * Gutenberg Query Loop handles this, we just enhance spacing
+ */
+.wp-block-post-template {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+ * Individual Post in List
+ * Clean, professional spacing
+ */
+.wp-block-post-template > li {
+    margin-block-end: var(--wp--preset--spacing--60, 3rem);
+    padding-block-end: var(--wp--preset--spacing--60, 3rem);
+    border-block-end: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+}
+
+.wp-block-post-template > li:last-child {
+    border-block-end: none;
+    margin-block-end: 0;
+    padding-block-end: 0;
+}
+
+/**
+ * Featured Image
+ * Consistent aspect ratio, smooth hover
+ */
+.wp-block-post-featured-image {
+    margin-block-end: var(--wp--preset--spacing--40, 1.5rem);
     overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    border-radius: 8px;
 }
 
-.blog-post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    border-color: rgba(0, 0, 0, 0.12);
-}
-
-/* Post thumbnail */
-.blog-post-card .post-thumbnail {
-    position: relative;
-    overflow: hidden;
-    background: var(--wp--preset--color--contrast, #f5f5f5);
-    aspect-ratio: 16 / 9;
-}
-
-.blog-post-card .post-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.wp-block-post-featured-image img {
     transition: transform 0.4s ease;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.blog-post-card:hover .post-thumbnail img {
-    transform: scale(1.05);
+.wp-block-post-featured-image:hover img {
+    transform: scale(1.03);
 }
 
-/* Post content area */
-.blog-post-card .post-content {
-    padding: var(--wp--preset--spacing--50, 2rem);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Post meta */
-.blog-post-card .post-meta {
-    display: flex;
-    gap: var(--wp--preset--spacing--30, 1rem);
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: var(--wp--preset--spacing--30, 1rem);
-    font-size: 0.875rem;
-    color: var(--wp--preset--color--contrast, rgba(0, 0, 0, 0.6));
-}
-
-.blog-post-card .post-meta a {
-    color: var(--wp--preset--color--primary, #000);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.blog-post-card .post-meta a:hover {
-    opacity: 0.7;
-}
-
-/* Category badge */
-.blog-post-card .post-category {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: var(--wp--preset--color--primary, #000);
-    color: var(--wp--preset--color--base, #fff);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-}
-
-/* Post title */
-.blog-post-card .post-title {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: var(--wp--preset--spacing--30, 1rem);
-    letter-spacing: -0.01em;
-}
-
-.blog-post-card .post-title a {
-    color: var(--wp--preset--color--contrast, #000);
+/**
+ * Post Title
+ * Gutenberg handles typography, we add interaction
+ */
+.wp-block-post-title a {
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.blog-post-card .post-title a:hover {
-    color: var(--wp--preset--color--primary, #000);
+.wp-block-post-title a:hover {
+    color: var(--wp--preset--color--primary, #1A73E8);
 }
 
-/* Post excerpt */
-.blog-post-card .post-excerpt {
-    font-size: 1rem;
+/**
+ * Post Meta (Date, Author, Categories, Tags)
+ * Flexbox for inline display, intelligent spacing
+ */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wp--preset--spacing--30, 1rem);
+    align-items: center;
+    margin-block-end: var(--wp--preset--spacing--30, 1rem);
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    color: var(--wp--preset--color--neutral-700, #424242);
+}
+
+.post-meta > * {
+    margin: 0;
+}
+
+/**
+ * Category Badge
+ * Inline, professional styling
+ */
+.wp-block-post-terms {
+    margin: 0;
+}
+
+.wp-block-post-terms a {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: var(--wp--preset--color--primary, #1A73E8);
+    color: var(--wp--preset--color--neutral-100, #fff);
+    border-radius: 4px;
+    font-size: var(--wp--preset--font-size--xs, 0.75rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.wp-block-post-terms a:hover {
+    background: var(--wp--preset--color--secondary, #E91E63);
+}
+
+/**
+ * Multiple Categories - Intelligent Display
+ * Handles 0, 1, or multiple categories gracefully
+ */
+.wp-block-post-terms:empty {
+    display: none;
+}
+
+.wp-block-post-terms a + a {
+    margin-inline-start: 0.5rem;
+}
+
+/**
+ * Post Date
+ * Clean, readable
+ */
+.wp-block-post-date {
+    margin: 0;
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    color: var(--wp--preset--color--neutral-700, #424242);
+}
+
+.wp-block-post-date a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.wp-block-post-date a:hover {
+    opacity: 0.7;
+}
+
+/**
+ * Post Author
+ */
+.wp-block-post-author {
+    margin: 0;
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+}
+
+.wp-block-post-author__name a {
+    text-decoration: none;
+    color: var(--wp--preset--color--neutral-700, #424242);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.wp-block-post-author__name a:hover {
+    color: var(--wp--preset--color--primary, #1A73E8);
+}
+
+/**
+ * Post Excerpt
+ * Gutenberg handles most styling
+ */
+.wp-block-post-excerpt {
+    margin-block-start: var(--wp--preset--spacing--30, 1rem);
+}
+
+.wp-block-post-excerpt__excerpt {
+    color: var(--wp--preset--color--neutral-700, #424242);
     line-height: 1.7;
-    color: var(--wp--preset--color--contrast, rgba(0, 0, 0, 0.7));
-    margin-bottom: var(--wp--preset--spacing--40, 1.5rem);
-    flex: 1;
 }
 
-/* Read more link */
-.blog-post-card .read-more {
+.wp-block-post-excerpt__more-text {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
-    color: var(--wp--preset--color--primary, #000);
+    color: var(--wp--preset--color--primary, #1A73E8);
     text-decoration: none;
     transition: gap 0.2s ease;
 }
 
-.blog-post-card .read-more:hover {
+.wp-block-post-excerpt__more-text:hover {
     gap: 0.75rem;
 }
 
-.blog-post-card .read-more::after {
+.wp-block-post-excerpt__more-text::after {
     content: "→";
-    font-size: 1.25rem;
+    font-size: 1.25em;
 }
 
 /* ==========================================================================
-   Layout: List View (Default)
+   Multi-Column Grid Layout (Custom Template)
    ========================================================================== */
 
-.blog-layout-list .blog-posts {
+/**
+ * Grid Container Class
+ * Applied via template or block class
+ */
+.blog-layout-grid .wp-block-post-template,
+.archive-layout-grid .wp-block-post-template {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--wp--preset--spacing--50, 2rem);
+}
+
+/* 2 Column Grid */
+.blog-layout-2col .wp-block-post-template,
+.archive-layout-2col .wp-block-post-template {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--wp--preset--spacing--50, 2rem);
+}
+
+/* 3 Column Grid */
+.blog-layout-3col .wp-block-post-template,
+.archive-layout-3col .wp-block-post-template {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--wp--preset--spacing--50, 2rem);
+}
+
+/**
+ * Grid Post Cards
+ * Card-style with hover effects
+ */
+.blog-layout-grid .wp-block-post-template > li,
+.blog-layout-2col .wp-block-post-template > li,
+.blog-layout-3col .wp-block-post-template > li,
+.archive-layout-grid .wp-block-post-template > li,
+.archive-layout-2col .wp-block-post-template > li,
+.archive-layout-3col .wp-block-post-template > li {
+    background: var(--wp--preset--color--neutral-100, #fff);
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    padding: 15px 0 0 0;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: var(--wp--preset--spacing--50, 2.5rem);
 }
 
-.blog-layout-list .blog-post-card {
+.blog-layout-grid .wp-block-post-template > li:hover,
+.blog-layout-2col .wp-block-post-template > li:hover,
+.blog-layout-3col .wp-block-post-template > li:hover,
+.archive-layout-grid .wp-block-post-template > li:hover,
+.archive-layout-2col .wp-block-post-template > li:hover,
+.archive-layout-3col .wp-block-post-template > li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.15));
+}
+
+/**
+ * Grid Card Content Padding
+ */
+.blog-layout-grid .wp-block-post-featured-image,
+.blog-layout-2col .wp-block-post-featured-image,
+.blog-layout-3col .wp-block-post-featured-image,
+.archive-layout-grid .wp-block-post-featured-image,
+.archive-layout-2col .wp-block-post-featured-image,
+.archive-layout-3col .wp-block-post-featured-image {
+    margin: 0 0 var(--wp--preset--spacing--40, 1.5rem) 0;
+    border-radius: 0;
+}
+
+.blog-layout-grid .wp-block-post-title,
+.blog-layout-grid .post-meta,
+.blog-layout-grid .wp-block-post-excerpt,
+.blog-layout-2col .wp-block-post-title,
+.blog-layout-2col .post-meta,
+.blog-layout-2col .wp-block-post-excerpt,
+.blog-layout-3col .wp-block-post-title,
+.blog-layout-3col .post-meta,
+.blog-layout-3col .wp-block-post-excerpt,
+.archive-layout-grid .wp-block-post-title,
+.archive-layout-grid .post-meta,
+.archive-layout-grid .wp-block-post-excerpt,
+.archive-layout-2col .wp-block-post-title,
+.archive-layout-2col .post-meta,
+.archive-layout-2col .wp-block-post-excerpt,
+.archive-layout-3col .wp-block-post-title,
+.archive-layout-3col .post-meta,
+.archive-layout-3col .wp-block-post-excerpt {
+    padding-inline: var(--wp--preset--spacing--40, 1.5rem);
+}
+
+.blog-layout-grid .wp-block-post-excerpt,
+.blog-layout-2col .wp-block-post-excerpt,
+.blog-layout-3col .wp-block-post-excerpt,
+.archive-layout-grid .wp-block-post-excerpt,
+.archive-layout-2col .wp-block-post-excerpt,
+.archive-layout-3col .wp-block-post-excerpt {
+    padding-block-end: var(--wp--preset--spacing--40, 1.5rem);
+}
+
+/**
+ * Grid Featured Image Aspect Ratio
+ */
+.blog-layout-grid .wp-block-post-featured-image,
+.blog-layout-2col .wp-block-post-featured-image,
+.blog-layout-3col .wp-block-post-featured-image,
+.archive-layout-grid .wp-block-post-featured-image,
+.archive-layout-2col .wp-block-post-featured-image,
+.archive-layout-3col .wp-block-post-featured-image {
+    aspect-ratio: 16 / 9;
+}
+
+.blog-layout-grid .wp-block-post-featured-image img,
+.blog-layout-2col .wp-block-post-featured-image img,
+.blog-layout-3col .wp-block-post-featured-image img,
+.archive-layout-grid .wp-block-post-featured-image img,
+.archive-layout-2col .wp-block-post-featured-image img,
+.archive-layout-3col .wp-block-post-featured-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Sidebar Layouts - Three Variations
+   ========================================================================== */
+
+/**
+ * Sidebar Container Setup
+ */
+.has-sidebar .blog-archive .blog-archive-group {
     display: grid;
+    gap: var(--wp--preset--spacing--60, 3rem);
+    align-items: start;
+}
+
+/**
+ * Right Sidebar (Default)
+ */
+.has-sidebar.sidebar-right .blog-archive-group {
+    grid-template-columns: 1fr 300px;
+}
+
+/**
+ * Left Sidebar
+ */
+.has-sidebar.sidebar-left .blog-archive-group{
     grid-template-columns: 300px 1fr;
-    gap: var(--wp--preset--spacing--50, 2rem);
-    height: auto;
 }
 
-.blog-layout-list .blog-post-card .post-thumbnail {
-    aspect-ratio: 4 / 3;
+.has-sidebar.sidebar-left .blog-sidebar {
+    order: -1;
 }
 
-.blog-layout-list .blog-post-card .post-content {
-    padding: var(--wp--preset--spacing--40, 1.5rem) var(--wp--preset--spacing--50, 2rem);
+/**
+ * No Sidebar (Full Width)
+ */
+.sidebar-none .wp-block-query {
+    max-width: var(--wp--style--global--wide-size, 1200px);
+    margin-inline: auto;
 }
 
-/* Mobile: Stack in list view */
-@media (max-width: 781px) {
-    .blog-layout-list .blog-post-card {
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-layout-list .blog-post-card .post-thumbnail {
-        aspect-ratio: 16 / 9;
-    }
+.sidebar-none .blog-sidebar{
+    display: none;
 }
 
-/* ==========================================================================
-   Layout: Grid View
-   ========================================================================== */
-
-.blog-layout-grid .blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--wp--preset--spacing--50, 2rem);
+/**
+ * Sidebar Sticky Behavior
+ */
+.blog-sidebar {
+    position: sticky;
+    top: calc(var(--wp-admin--admin-bar--height, 0px) + 2rem);
+    margin-block-start: 0;
+    padding: 0;
 }
 
-/* Grid: 2 columns on tablet */
-@media (min-width: 782px) and (max-width: 1024px) {
-    .blog-layout-grid .blog-posts {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/**
+ * Sidebar Widget Styling
+ * Clean, professional cards
+ */
+.blog-sidebar .wp-block-group {
+    background: var(--wp--preset--color--neutral-100, #fff);
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+    border-radius: 8px;
+    padding: var(--wp--preset--spacing--40, 1.5rem);
+    margin-block-end: var(--wp--preset--spacing--40, 1.5rem);
 }
 
-/* Grid: 3 columns on desktop */
-@media (min-width: 1025px) {
-    .blog-layout-grid .blog-posts {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Grid: 1 column on mobile */
-@media (max-width: 781px) {
-    .blog-layout-grid .blog-posts {
-        grid-template-columns: 1fr;
-    }
+.blog-sidebar .wp-block-heading {
+    font-size: var(--wp--preset--font-size--lg, 1.25rem);
+    margin-block-end: var(--wp--preset--spacing--30, 1rem);
+    padding-block-end: var(--wp--preset--spacing--20, 0.75rem);
+    border-block-end: 2px solid var(--wp--preset--color--primary, #1A73E8);
 }
 
 /* ==========================================================================
-   Layout: Masonry View
+   Pagination - Modern, Clean
    ========================================================================== */
 
-.blog-layout-masonry .blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--wp--preset--spacing--50, 2rem);
+.wp-block-query-pagination {
+    margin-block-start: var(--wp--preset--spacing--60, 3rem);
+    padding-block-start: var(--wp--preset--spacing--40, 2rem);
+    border-block-start: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
 }
 
-/* Masonry uses JavaScript to position items */
-.blog-layout-masonry.masonry-initialized .blog-posts {
-    position: relative;
+.wp-block-query-pagination > * {
+    margin: 0;
 }
 
-.blog-layout-masonry.masonry-initialized .blog-post-card {
-    position: absolute;
-    width: calc((100% - 4rem) / 3); /* 3 columns */
-}
-
-/* Masonry: 2 columns on tablet */
-@media (min-width: 782px) and (max-width: 1024px) {
-    .blog-layout-masonry .blog-posts {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .blog-layout-masonry.masonry-initialized .blog-post-card {
-        width: calc((100% - 2rem) / 2);
-    }
-}
-
-/* Masonry: 1 column on mobile */
-@media (max-width: 781px) {
-    .blog-layout-masonry .blog-posts {
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-layout-masonry.masonry-initialized .blog-post-card {
-        width: 100%;
-    }
-}
-
-/* ==========================================================================
-   Pagination - Modern Style
-   ========================================================================== */
-
-.blog-pagination {
-    margin-top: var(--wp--preset--spacing--70, 4rem);
-    padding-top: var(--wp--preset--spacing--50, 2rem);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.pagination-links {
+.wp-block-query-pagination-numbers {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: var(--wp--preset--spacing--20, 0.5rem);
     flex-wrap: wrap;
 }
 
-.pagination-links a,
-.pagination-links span {
+.wp-block-query-pagination a,
+.wp-block-query-pagination .page-numbers {
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 44px;
     height: 44px;
-    padding: 0 1rem;
+    padding-inline: var(--wp--preset--spacing--30, 1rem);
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
-.pagination-links a {
-    background: var(--wp--preset--color--base, #ffffff);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    color: var(--wp--preset--color--contrast, #000);
+.wp-block-query-pagination a {
+    background: var(--wp--preset--color--neutral-100, #fff);
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.12));
+    color: var(--wp--preset--color--neutral-900, #111);
 }
 
-.pagination-links a:hover {
-    background: var(--wp--preset--color--primary, #000);
-    color: var(--wp--preset--color--base, #fff);
+.wp-block-query-pagination a:hover {
+    background: var(--wp--preset--color--primary, #1A73E8);
+    color: var(--wp--preset--color--neutral-100, #fff);
     transform: translateY(-2px);
 }
 
-.pagination-links .current {
-    background: var(--wp--preset--color--primary, #000);
-    color: var(--wp--preset--color--base, #fff);
+.wp-block-query-pagination .current {
+    background: var(--wp--preset--color--primary, #1A73E8);
+    color: var(--wp--preset--color--neutral-100, #fff);
 }
 
 /* ==========================================================================
-   Sidebar Layout Support
+   No Results State
    ========================================================================== */
 
-/* Sidebar right */
-.sidebar-right .blog-content-area {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--wp--preset--spacing--60, 3rem);
+.wp-block-query-no-results {
+    text-align: center;
+    padding-block: var(--wp--preset--spacing--70, 4rem);
 }
 
-/* Sidebar left */
-.sidebar-left .blog-content-area {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: var(--wp--preset--spacing--60, 3rem);
+.wp-block-query-no-results .wp-block-heading {
+    font-size: var(--wp--preset--font-size--2-xl, 2rem);
+    margin-block-end: var(--wp--preset--spacing--30, 1rem);
 }
 
-/* No sidebar - full width */
-.sidebar-none .blog-content-area {
-    max-width: 1200px;
-    margin: 0 auto;
+.wp-block-query-no-results p {
+    color: var(--wp--preset--color--neutral-700, #424242);
 }
 
-/* Mobile: Stack sidebar */
+/* ==========================================================================
+   Responsive Design - Mobile First
+   ========================================================================== */
+
+/**
+ * Tablet: Stack Sidebars
+ */
 @media (max-width: 1024px) {
-    .sidebar-right .blog-content-area,
-    .sidebar-left .blog-content-area {
+    .has-sidebar.sidebar-right .blog-archive-group,
+    .has-sidebar.sidebar-left .blog-archive-group{
         grid-template-columns: 1fr;
     }
-}
-
-/* ==========================================================================
-   Sidebar Widgets Styling
-   ========================================================================== */
-
-.blog-sidebar {
-    position: sticky;
-    top: calc(var(--wp--admin--admin-bar--height, 0px) + 2rem);
-}
-
-.blog-sidebar .widget {
-    background: var(--wp--preset--color--base, #ffffff);
-    padding: var(--wp--preset--spacing--50, 2rem);
-    border-radius: 12px;
-    margin-bottom: var(--wp--preset--spacing--40, 2rem);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.blog-sidebar .widget-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: var(--wp--preset--spacing--30, 1rem);
-    padding-bottom: var(--wp--preset--spacing--20, 0.75rem);
-    border-bottom: 2px solid var(--wp--preset--color--primary, #000);
-}
-
-/* ==========================================================================
-   Blog Header/Archive Title
-   ========================================================================== */
-
-.blog-header {
-    text-align: center;
-    padding: var(--wp--preset--spacing--60, 3rem) 0;
-    margin-bottom: var(--wp--preset--spacing--60, 3rem);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.blog-header .archive-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--wp--preset--spacing--30, 1rem);
-}
-
-.blog-header .archive-description {
-    font-size: 1.125rem;
-    color: var(--wp--preset--color--contrast, rgba(0, 0, 0, 0.7));
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* ==========================================================================
-   Loading State (for Masonry)
-   ========================================================================== */
-
-.blog-posts.loading {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.blog-posts.loading::after {
-    content: "Loading...";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 600;
-    color: var(--wp--preset--color--contrast, rgba(0, 0, 0, 0.6));
-}
-
-/* ==========================================================================
-   Empty State
-   ========================================================================== */
-
-.blog-no-posts {
-    text-align: center;
-    padding: var(--wp--preset--spacing--70, 5rem) 0;
-}
-
-.blog-no-posts h2 {
-    font-size: 2rem;
-    margin-bottom: var(--wp--preset--spacing--30, 1rem);
-}
-
-.blog-no-posts p {
-    font-size: 1.125rem;
-    color: var(--wp--preset--color--contrast, rgba(0, 0, 0, 0.7));
-}
-
-/* ==========================================================================
-   Accessibility & Print
-   ========================================================================== */
-
-/* Focus visible */
-.blog-post-card a:focus-visible {
-    outline: 2px solid var(--wp--preset--color--primary, #000);
-    outline-offset: 4px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .blog-post-card,
-    .blog-post-card .post-thumbnail img,
-    .pagination-links a {
-        transition: none !important;
-        animation: none !important;
-        transform: none !important;
+    
+    .has-sidebar.sidebar-left .blog-archive-group .blog-sidebar {
+        order: 0;
     }
 }
 
-/* Print styles */
+/**
+ * Tablet: 2 Column Grid
+ */
+@media (min-width: 782px) and (max-width: 1024px) {
+    .blog-layout-grid .wp-block-post-template,
+    .blog-layout-3col .wp-block-post-template {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .archive-layout-grid .wp-block-post-template,
+    .archive-layout-3col .wp-block-post-template {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/**
+ * Mobile: Single Column
+ */
+@media (max-width: 781px) {
+    .blog-layout-grid .wp-block-post-template,
+    .blog-layout-2col .wp-block-post-template,
+    .blog-layout-3col .wp-block-post-template {
+        grid-template-columns: 1fr;
+    }
+
+    .archive-layout-grid .wp-block-post-template,
+    .archive-layout-2col .wp-block-post-template,
+    .archive-layout-3col .wp-block-post-template {
+        grid-template-columns: 1fr;
+    }
+    
+    .has-sidebar .blog-archive-group {
+        gap: var(--wp--preset--spacing--40, 2rem);
+    }
+    
+    .wp-block-query-pagination {
+        font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    }
+    
+    .wp-block-query-pagination a,
+    .wp-block-query-pagination .page-numbers {
+        min-width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/**
+ * Focus States
+ */
+.wp-block-post-title a:focus-visible,
+.wp-block-post-featured-image a:focus-visible,
+.wp-block-post-terms a:focus-visible,
+.wp-block-query-pagination a:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary, #1A73E8);
+    outline-offset: 2px;
+}
+
+/**
+ * Reduced Motion Support
+ */
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-post-featured-image img,
+    .blog-layout-grid .wp-block-post-template > li,
+    .blog-layout-2col .wp-block-post-template > li,
+    .blog-layout-3col .wp-block-post-template > li,
+    .wp-block-query-pagination a {
+        transition: none;
+    }
+}
+
+/**
+ * Skip to Content Link
+ */
+.skip-to-content:focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--wp--preset--spacing--30, 1rem);
+    background: var(--wp--preset--color--neutral-900, #111);
+    color: var(--wp--preset--color--neutral-100, #fff);
+    text-decoration: none;
+    z-index: 10000;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
 @media print {
     .blog-sidebar,
-    .blog-pagination {
+    .wp-block-query-pagination {
         display: none;
     }
     
-    .blog-layout-list .blog-posts,
-    .blog-layout-grid .blog-posts,
-    .blog-layout-masonry .blog-posts {
+    .has-sidebar.sidebar-right .blog-archive-group,
+    .has-sidebar.sidebar-left .blog-archive-group{
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-layout-grid .wp-block-post-template,
+    .blog-layout-2col .wp-block-post-template,
+    .blog-layout-3col .wp-block-post-template {
         display: block;
     }
     
-    .blog-post-card {
+    .wp-block-post-template > li {
         page-break-inside: avoid;
-        margin-bottom: 2rem;
+        margin-block-end: 2rem;
         border: 1px solid #ccc;
     }
 }

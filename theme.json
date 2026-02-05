@@ -1,13 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
-  "customTemplates": [
-    {
-      "name": "blog",
-      "title": "Custom Blog",
-      "postTypes": ["page"]
-    }
-  ],
+  "customTemplates": [],
   "settings": {
     "appearanceTools": true,
     "useRootPaddingAwareAlignments": true,
@@ -93,6 +87,7 @@
       ]
     },
     "spacing": {
+      "blockGap": true,
       "padding": true,
       "margin": true,
       "units": ["px", "em", "rem", "%", "vh", "vw"],
@@ -381,6 +376,12 @@
       "core/navigation": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--base)"
+        }
+      },
+      "core/post-title": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--2-xl)",
+          "fontWeight": "700"
         }
       }
     }

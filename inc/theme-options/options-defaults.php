@@ -39,7 +39,7 @@ function versana_get_default_options() {
         'footer_copyright'         => '',
 
         // Blog Tab
-        'blog_layout'              => 'grid',
+        'blog_layout'              => 'list',
         'blog_sidebar_position'    => 'right',
         'archive_layout'           => 'inherit',
         'enable_reading_time'      => true,

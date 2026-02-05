@@ -62,9 +62,9 @@ function versana_sanitize_options( $input ) {
     $select_fields = array(
         'header_layout'          => array( 'default', 'centered' ),
         'footer_columns'         => array( '1', '2', '3', '4' ),
-        'blog_layout'            => array( 'grid', 'list', 'masonry' ),
+        'blog_layout'            => array( '2col', 'list', '3col' ),
         'blog_sidebar_position'  => array( 'left', 'right', 'none' ),
-        'archive_layout'         => array( 'inherit', 'grid', 'list' ),
+        'archive_layout'         => array( 'inherit', '2col', '3col', 'list' ),
     );
     
     foreach ( $select_fields as $field => $allowed_values ) {

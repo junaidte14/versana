@@ -1,251 +1,99 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"versana","tagName":"header"} /-->
 
-<!-- wp:cover {"url":"","dimRatio":0,"overlayColor":"contrast","minHeight":85,"minHeightUnit":"vh","className":"home-hero gradient-primary","align":"full"} -->
-<div class="wp-block-cover alignfull home-hero gradient-primary" style="min-height:85vh">
-    <span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-0 has-background-dim"></span>
-    
-    <div class="wp-block-cover__inner-container">
-        <!-- wp:group {"className":"stagger-children","layout":{"type":"constrained","contentSize":"900px"}} -->
-        <div class="wp-block-group stagger-children">
-            
-            <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"5rem","fontWeight":"800"}}} -->
-            <h1 class="has-text-align-center" style="font-size:5rem;font-weight:800">Build Amazing Websites</h1>
-            <!-- /wp:heading -->
-            
-            <!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-            <p class="has-text-align-center has-large-font-size">Create stunning, professional websites with our modern block theme. No coding required.</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-            <div class="wp-block-buttons">
-                <!-- wp:button {"className":"is-style-fill"} -->
-                <div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button">Get Started Free</a></div>
-                <!-- /wp:button -->
-                
-                <!-- wp:button {"className":"is-style-outline"} -->
-                <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">Learn More</a></div>
-                <!-- /wp:button -->
+<!-- wp:group {"tagName":"main","className":"blog-archive","layout":{"type":"constrained"}} -->
+<main class="wp-block-group blog-archive">
+    <!-- wp:group {"align":"wide","className":"blog-archive-group","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide blog-archive-group">
+        <!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide","layout":{"type":"constrained"}} -->
+        <div class="wp-block-query alignwide">
+            <!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0"}}} -->
+            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} /-->
+
+            <!-- wp:group {"className":"post-meta"} -->
+            <div class="wp-block-group post-meta">
+                <!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-100"}}}}} /-->
+
+                <!-- wp:post-date {"format":"M j, Y","isLink":true,"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontSize":"0.875rem"}}} /-->
+
+                <!-- wp:post-author-name {"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-700"}}},"typography":{"fontSize":"0.875rem"}}} /-->
             </div>
-            <!-- /wp:buttons -->
-            
-        </div>
-        <!-- /wp:group -->
-    </div>
-</div>
-<!-- /wp:cover -->
+            <!-- /wp:group -->
 
-<!-- wp:group {"className":"home-features home-section","align":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull home-features home-section">
-    
-    <!-- wp:heading {"textAlign":"center","className":"section-title"} -->
-    <h2 class="has-text-align-center section-title">Powerful Features</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:paragraph {"align":"center","className":"section-subtitle"} -->
-    <p class="has-text-align-center section-subtitle">Everything you need to build modern, professional websites</p>
-    <!-- /wp:paragraph -->
-    
-    <!-- wp:columns {"align":"wide"} -->
-    <div class="wp-block-columns alignwide">
-        
-        <!-- wp:column {"className":"fade-in"} -->
-        <div class="wp-block-column fade-in">
-            <!-- wp:paragraph {"align":"center","className":"feature-icon","fontSize":"xxx-large"} -->
-            <p class="has-text-align-center feature-icon has-xxx-large-font-size">⚡</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="has-text-align-center">Lightning Fast</h3>
-            <!-- /wp:heading -->
-            
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">Optimized for speed and performance. Load times under 1 second guaranteed.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column {"className":"fade-in"} -->
-        <div class="wp-block-column fade-in">
-            <!-- wp:paragraph {"align":"center","className":"feature-icon","fontSize":"xxx-large"} -->
-            <p class="has-text-align-center feature-icon has-xxx-large-font-size">🎨</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="has-text-align-center">Beautiful Design</h3>
-            <!-- /wp:heading -->
-            
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">Modern, minimalist design that looks stunning on all devices.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column {"className":"fade-in"} -->
-        <div class="wp-block-column fade-in">
-            <!-- wp:paragraph {"align":"center","className":"feature-icon","fontSize":"xxx-large"} -->
-            <p class="has-text-align-center feature-icon has-xxx-large-font-size">🔒</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:heading {"textAlign":"center","level":3} -->
-            <h3 class="has-text-align-center">Secure & Reliable</h3>
-            <!-- /wp:heading -->
-            
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">Built with security best practices. Regular updates and support included.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-    </div>
-    <!-- /wp:columns -->
-    
-</div>
-<!-- /wp:group -->
+            <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}},"typography":{"fontSize":"clamp(1.5rem, 3vw, 2rem)","fontWeight":"700","lineHeight":"1.3"}}} /-->
 
-<!-- wp:group {"className":"home-stats home-section","align":"full","backgroundColor":"base-2","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull home-stats home-section has-base-2-background-color has-background">
-    
-    <!-- wp:columns {"align":"wide"} -->
-    <div class="wp-block-columns alignwide">
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:paragraph {"align":"center","className":"stat-number"} -->
-            <p class="has-text-align-center stat-number">10K+</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:paragraph {"align":"center","className":"stat-label"} -->
-            <p class="has-text-align-center stat-label">Active Users</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:paragraph {"align":"center","className":"stat-number"} -->
-            <p class="has-text-align-center stat-number">99.9%</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:paragraph {"align":"center","className":"stat-label"} -->
-            <p class="has-text-align-center stat-label">Uptime</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:paragraph {"align":"center","className":"stat-number"} -->
-            <p class="has-text-align-center stat-number">50M+</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:paragraph {"align":"center","className":"stat-label"} -->
-            <p class="has-text-align-center stat-label">Page Views</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:paragraph {"align":"center","className":"stat-number"} -->
-            <p class="has-text-align-center stat-number">24/7</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:paragraph {"align":"center","className":"stat-label"} -->
-            <p class="has-text-align-center stat-label">Support</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
-        
-    </div>
-    <!-- /wp:columns -->
-    
-</div>
-<!-- /wp:group -->
+            <!-- wp:post-excerpt {"moreText":"Continue reading →","excerptLength":30,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} /-->
+            <!-- /wp:post-template -->
 
-<!-- wp:group {"className":"home-testimonials home-section","align":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull home-testimonials home-section">
-    
-    <!-- wp:heading {"textAlign":"center","className":"section-title"} -->
-    <h2 class="has-text-align-center section-title">What People Say</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:columns {"align":"wide"} -->
-    <div class="wp-block-columns alignwide">
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:group {"className":"testimonial-card"} -->
-            <div class="wp-block-group testimonial-card">
-                <!-- wp:paragraph {"className":"testimonial-text"} -->
-                <p class="testimonial-text">"This theme transformed our website. Beautiful design and incredible performance!"</p>
-                <!-- /wp:paragraph -->
-                
-                <!-- wp:paragraph {"className":"testimonial-author"} -->
-                <p class="testimonial-author">Sarah Johnson</p>
-                <!-- /wp:paragraph -->
-                
-                <!-- wp:paragraph {"className":"testimonial-role"} -->
-                <p class="testimonial-role">CEO, TechStart</p>
-                <!-- /wp:paragraph -->
+            <!-- wp:query-pagination {"paginationArrow":"arrow","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+            <!-- wp:query-pagination-previous /-->
+
+            <!-- wp:query-pagination-numbers /-->
+
+            <!-- wp:query-pagination-next /-->
+            <!-- /wp:query-pagination -->
+
+            <!-- wp:query-no-results -->
+            <!-- wp:heading {"className":"wp-block-heading has-text-align-center"} -->
+            <h2 class="wp-block-heading has-text-align-center">No posts found</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Start creating your first blog post to see it appear here!</p>
+            <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results -->
+        </div>
+        <!-- /wp:query -->
+
+        <!-- wp:group {"align":"full","className":"blog-sidebar","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignfull blog-sidebar">
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Search</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search posts...","buttonText":"Search"} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Categories</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:categories {"showHierarchy":true,"showPostCounts":true} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Recent Posts</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:latest-posts {"displayPostDate":true,"displayFeaturedImage":true} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide has-neutral-100-background-color has-background"
+                style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                <!-- wp:heading {"level":3,"fontSize":"lg"} -->
+                <h3 class="wp-block-heading has-lg-font-size">Tags</h3>
+                <!-- /wp:heading -->
+
+                <!-- wp:tag-cloud /-->
             </div>
             <!-- /wp:group -->
         </div>
-        <!-- /wp:column -->
-        
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:group {"className":"testimonial-card"} -->
-            <div class="wp-block-group testimonial-card">
-                <!-- wp:paragraph {"className":"testimonial-text"} -->
-                <p class="testimonial-text">"Easy to customize, blazing fast, and the support is outstanding. Highly recommend!"</p>
-                <!-- /wp:paragraph -->
-                
-                <!-- wp:paragraph {"className":"testimonial-author"} -->
-                <p class="testimonial-author">Michael Chen</p>
-                <!-- /wp:paragraph -->
-                
-                <!-- wp:paragraph {"className":"testimonial-role"} -->
-                <p class="testimonial-role">Founder, DesignCo</p>
-                <!-- /wp:paragraph -->
-            </div>
-            <!-- /wp:group -->
-        </div>
-        <!-- /wp:column -->
-        
-    </div>
-    <!-- /wp:columns -->
-    
-</div>
-<!-- /wp:group -->
-
-<!-- wp:cover {"overlayColor":"contrast","className":"home-cta","align":"full"} -->
-<div class="wp-block-cover alignfull home-cta">
-    <span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-100 has-background-dim"></span>
-    
-    <div class="wp-block-cover__inner-container">
-        <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
-        <div class="wp-block-group">
-            
-            <!-- wp:heading {"textAlign":"center","level":2} -->
-            <h2 class="has-text-align-center">Ready to Get Started?</h2>
-            <!-- /wp:heading -->
-            
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">Join thousands of satisfied users building amazing websites today.</p>
-            <!-- /wp:paragraph -->
-            
-            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-            <div class="wp-block-buttons">
-                <!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
-                <div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button">Start Free Trial</a></div>
-                <!-- /wp:button -->
-            </div>
-            <!-- /wp:buttons -->
-            
-        </div>
         <!-- /wp:group -->
     </div>
-</div>
-<!-- /wp:cover -->
+    <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"versana","tagName":"footer"} /-->

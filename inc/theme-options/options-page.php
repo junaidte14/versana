@@ -403,11 +403,11 @@ function versana_render_blog_tab() {
                             <option value="list" <?php selected( versana_get_option( 'blog_layout' ), 'list' ); ?>>
                                 <?php esc_html_e( 'Standard List', 'versana' ); ?>
                             </option>
-                            <option value="grid" <?php selected( versana_get_option( 'blog_layout' ), 'grid' ); ?>>
-                                <?php esc_html_e( 'Grid Layout', 'versana' ); ?>
+                            <option value="2col" <?php selected( versana_get_option( 'blog_layout' ), '2col' ); ?>>
+                                <?php esc_html_e( 'Two Columns Grid Layout', 'versana' ); ?>
                             </option>
-                            <option value="masonry" <?php selected( versana_get_option( 'blog_layout' ), 'masonry' ); ?>>
-                                <?php esc_html_e( 'Masonry Grid', 'versana' ); ?>
+                            <option value="3col" <?php selected( versana_get_option( 'blog_layout' ), '3col' ); ?>>
+                                <?php esc_html_e( 'Three Columns Grid Layout', 'versana' ); ?>
                             </option>
                         </select>
                         <p class="description">
@@ -454,8 +454,11 @@ function versana_render_blog_tab() {
                             <option value="list" <?php selected( versana_get_option( 'archive_layout' ), 'list' ); ?>>
                                 <?php esc_html_e( 'Standard List', 'versana' ); ?>
                             </option>
-                            <option value="grid" <?php selected( versana_get_option( 'archive_layout' ), 'grid' ); ?>>
-                                <?php esc_html_e( 'Grid Layout', 'versana' ); ?>
+                            <option value="2col" <?php selected( versana_get_option( 'archive_layout' ), '2col' ); ?>>
+                                <?php esc_html_e( 'Two Columns Grid Layout', 'versana' ); ?>
+                            </option>
+                            <option value="3col" <?php selected( versana_get_option( 'archive_layout' ), '3col' ); ?>>
+                                <?php esc_html_e( 'Three Columns Grid Layout', 'versana' ); ?>
                             </option>
                         </select>
                         <p class="description">
