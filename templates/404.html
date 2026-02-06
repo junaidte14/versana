@@ -1,11 +1,68 @@
 <!-- wp:template-part {"slug":"header","theme":"versana","tagName":"header"} /-->
 
-<!-- wp:heading {"level":1} -->
-<h1>404 – Page Not Found</h1>
-<!-- /wp:heading -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|2xl","bottom":"var:preset|spacing|2xl"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group"
+    style="padding-top:var(--wp--preset--spacing--2-xl);padding-bottom:var(--wp--preset--spacing--2-xl)">
+    <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|lg"}},"layout":{"type":"constrained","contentSize":"600px"}} -->
+    <div class="wp-block-group alignwide">
+        <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"clamp(3rem, 10vw, 6rem)","fontWeight":"800","lineHeight":"1"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|sm"}}},"textColor":"neutral-300"} -->
+        <h1 class="wp-block-heading has-text-align-center has-neutral-300-color has-text-color"
+            style="margin-top:0;margin-bottom:var(--wp--preset--spacing--sm);font-size:clamp(3rem, 10vw, 6rem);font-weight:800;line-height:1">
+            404</h1>
+        <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p>Oops! The page you're looking for doesn’t exist. Try going back to the homepage.</p>
-<!-- /wp:paragraph -->
+        <!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|md"}}}} -->
+        <h2 class="wp-block-heading has-text-align-center"
+            style="margin-top:0;margin-bottom:var(--wp--preset--spacing--md)">Page Not Found</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|lg"}}},"textColor":"neutral-700","fontSize":"md"} -->
+        <p class="has-text-align-center has-neutral-700-color has-text-color has-md-font-size"
+            style="margin-top:0;margin-bottom:var(--wp--preset--spacing--lg)">The page you're looking for doesn't exist
+            or has been moved. Let's get you back on track.</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search for content...","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"8px"}}} /-->
+
+        <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}}} -->
+        <hr class="wp-block-separator has-alpha-channel-opacity"
+            style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--xl)" />
+        <!-- /wp:separator -->
+
+        <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|md"}}}} -->
+        <h3 class="wp-block-heading has-text-align-center"
+            style="margin-top:0;margin-bottom:var(--wp--preset--spacing--md)">Helpful Links</h3>
+        <!-- /wp:heading -->
+
+        <!-- wp:navigation {"ref":4,"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|sm"}},"layout":{"type":"flex","justifyContent":"center","orientation":"vertical"}} /-->
+
+        <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|md"}}}} -->
+        <hr class="wp-block-separator has-alpha-channel-opacity"
+            style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--md)" />
+        <!-- /wp:separator -->
+
+        <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|md"}}}} -->
+        <h3 class="wp-block-heading has-text-align-center"
+            style="margin-top:0;margin-bottom:var(--wp--preset--spacing--md)">Recent Posts</h3>
+        <!-- /wp:heading -->
+
+        <!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true,"displayFeaturedImage":true,"featuredImageAlign":"left","featuredImageSizeWidth":75,"featuredImageSizeHeight":75} /-->
+
+        <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|md"}}}} -->
+        <hr class="wp-block-separator has-alpha-channel-opacity"
+            style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--md)" />
+        <!-- /wp:separator -->
+
+        <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons" style="margin-top:0"><!-- wp:button {"width":100} -->
+            <div class="wp-block-button has-custom-width wp-block-button__width-100"><a
+                    class="wp-block-button__link wp-element-button" href="/">← Back to Homepage</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","theme":"versana","tagName":"footer"} /-->

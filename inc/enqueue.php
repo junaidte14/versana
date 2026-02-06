@@ -45,10 +45,23 @@ function versana_enqueue_dynamic_assets() {
      * Blog Specific Assets
      * Load on: blog index, archives, search, single posts
      */
-    if ( is_home() || is_archive() || is_search() || is_singular( 'post' ) ) {
+    if ( is_home() || is_archive() || is_search() || is_singular( 'post' )) {
         wp_enqueue_style(
             'versana-blog',
             get_template_directory_uri() . '/assets/css/blog.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+
+    /**
+     * Single Post Assets
+     * Enhanced styling for individual blog posts
+     */
+    if ( is_singular( 'post' ) ) {
+        wp_enqueue_style(
+            'versana-single',
+            get_template_directory_uri() . '/assets/css/single.css',
             array(),
             wp_get_theme()->get( 'Version' )
         );

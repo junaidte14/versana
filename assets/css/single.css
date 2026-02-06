@@ -1,0 +1,347 @@
+/**
+ * Single Post Enhancements
+ * Minimal custom styles - Gutenberg handles most styling
+ *
+ * @package Versana
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Post Navigation Links
+   ========================================================================== */
+
+/**
+ * Previous/Next Post Navigation
+ * Enhanced styling for post navigation links
+ */
+
+.single-post-navigations{
+    margin-block-start: var(--wp--preset--spacing--xl, 3rem);
+}
+
+.wp-block-post-navigation-link {
+    padding: var(--wp--preset--spacing--md, 1.5rem);
+    background: var(--wp--preset--color--neutral-100, #fff);
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-block-end: var(--wp--preset--spacing--md, 1.5rem);
+}
+
+.wp-block-post-navigation-link:hover {
+    border-color: var(--wp--preset--color--primary, #1A73E8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateX(4px);
+}
+
+.wp-block-post-navigation-link.post-navigation-link-previous:hover {
+    transform: translateX(-4px);
+}
+
+.wp-block-post-navigation-link a {
+    text-decoration: none;
+    color: var(--wp--preset--color--neutral-900, #111);
+}
+
+.wp-block-post-navigation-link .post-navigation-link__label {
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    color: var(--wp--preset--color--neutral-700, #424242);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    display: block;
+    margin-block-end: 0.5rem;
+}
+
+.wp-block-post-navigation-link .post-navigation-link__title {
+    font-size: var(--wp--preset--font-size--lg, 1.25rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Post Author Biography
+   ========================================================================== */
+
+/**
+ * Author Bio Box
+ * Professional author information display
+ */
+.wp-block-post-author-biography {
+    padding: var(--wp--preset--spacing--lg, 2rem);
+    background: var(--wp--preset--color--neutral-200, #f5f5f5);
+    border-radius: 12px;
+    border-left: 4px solid var(--wp--preset--color--primary, #1A73E8);
+    max-width: 100%;
+    margin-block-start: var(--wp--preset--spacing--xl, 3rem);
+}
+
+.wp-block-post-author-biography .wp-block-post-author-biography__heading {
+    font-size: var(--wp--preset--font-size--lg, 1.25rem);
+    margin-block-end: var(--wp--preset--spacing--sm, 1rem);
+}
+
+.wp-block-post-author-biography .wp-block-post-author-biography__bio {
+    line-height: 1.7;
+    color: var(--wp--preset--color--neutral-700, #424242);
+}
+
+/* ==========================================================================
+   Comments Section
+   ========================================================================== */
+
+/**
+ * Comments Container
+ * Clean, modern comment styling
+ */
+.wp-block-comments {
+    margin-block-start: var(--wp--preset--spacing--xl, 3rem);
+    max-width: 100%;
+}
+
+.wp-block-comments-title {
+    font-size: var(--wp--preset--font-size--2xl, 2rem);
+    margin-block-end: var(--wp--preset--spacing--lg, 2rem);
+}
+
+/**
+ * Individual Comment
+ */
+.wp-block-comment-template li {
+    padding: var(--wp--preset--spacing--md, 1.5rem);
+    background: var(--wp--preset--color--neutral-100, #fff);
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+    border-radius: 8px;
+    margin-block-end: var(--wp--preset--spacing--md, 1.5rem);
+}
+
+/**
+ * Nested Comments (Replies)
+ */
+.wp-block-comment-template .children {
+    margin-inline-start: var(--wp--preset--spacing--lg, 2rem);
+    margin-block-start: var(--wp--preset--spacing--md, 1.5rem);
+}
+
+/**
+ * Comment Author
+ */
+.wp-block-comment-author-name {
+    font-weight: 600;
+    font-size: var(--wp--preset--font-size--md, 1.125rem);
+}
+
+.wp-block-comment-author-name a {
+    text-decoration: none;
+    color: var(--wp--preset--color--neutral-900, #111);
+}
+
+/**
+ * Comment Date
+ */
+.wp-block-comment-date {
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    color: var(--wp--preset--color--neutral-700, #424242);
+}
+
+.wp-block-comment-date a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/**
+ * Comment Content
+ */
+.wp-block-comment-content {
+    margin-block-start: var(--wp--preset--spacing--sm, 1rem);
+    line-height: 1.7;
+    color: var(--wp--preset--color--neutral-700, #424242);
+}
+
+/**
+ * Comment Reply Link
+ */
+.wp-block-comment-reply-link {
+    margin-block-start: var(--wp--preset--spacing--sm, 1rem);
+}
+
+.wp-block-comment-reply-link a {
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    font-weight: 600;
+    color: var(--wp--preset--color--primary, #1A73E8);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.wp-block-comment-reply-link a:hover {
+    opacity: 0.7;
+}
+
+/**
+ * Comment Edit Link
+ */
+.wp-block-comment-edit-link a {
+    font-size: var(--wp--preset--font-size--sm, 0.875rem);
+    color: var(--wp--preset--color--neutral-700, #424242);
+    text-decoration: none;
+}
+
+/**
+ * Comments Pagination
+ */
+.wp-block-comments-pagination {
+    margin-block-start: var(--wp--preset--spacing--lg, 2rem);
+    padding-block-start: var(--wp--preset--spacing--md, 1.5rem);
+    border-block-start: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+}
+
+/**
+ * Comment Form
+ */
+.wp-block-post-comments-form {
+    margin-block-start: var(--wp--preset--spacing--xl, 3rem);
+    padding: var(--wp--preset--spacing--lg, 2rem);
+    background: var(--wp--preset--color--neutral-200, #f5f5f5);
+    border-radius: 12px;
+}
+
+.wp-block-post-comments-form .comment-form-comment label {
+    display: block;
+    font-weight: 600;
+    margin-block-end: 0.5rem;
+}
+
+.wp-block-post-comments-form textarea,
+.wp-block-post-comments-form input[type="text"],
+.wp-block-post-comments-form input[type="email"],
+.wp-block-post-comments-form input[type="url"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.2));
+    border-radius: 8px;
+    font-size: var(--wp--preset--font-size--base, 1rem);
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.wp-block-post-comments-form textarea:focus,
+.wp-block-post-comments-form input[type="text"]:focus,
+.wp-block-post-comments-form input[type="email"]:focus,
+.wp-block-post-comments-form input[type="url"]:focus {
+    outline: none;
+    border-color: var(--wp--preset--color--primary, #1A73E8);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.wp-block-post-comments-form .form-submit input[type="submit"] {
+    background: var(--wp--preset--color--primary, #1A73E8);
+    color: var(--wp--preset--color--neutral-100, #fff);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.wp-block-post-comments-form .form-submit input[type="submit"]:hover {
+    background: var(--wp--preset--color--secondary, #E91E63);
+}
+
+/* ==========================================================================
+   Post Content Enhancements
+   ========================================================================== */
+
+/**
+ * Drop Cap Enhancement
+ */
+.has-drop-cap:not(:focus)::first-letter {
+    font-size: 5em;
+    line-height: 0.68;
+    margin: 0.05em 0.1em 0 0;
+    color: var(--wp--preset--color--primary, #1A73E8);
+    font-weight: 700;
+}
+
+/**
+ * Blockquote Enhancement
+ */
+.wp-block-quote {
+    border-inline-start: 4px solid var(--wp--preset--color--primary, #1A73E8);
+    padding-inline-start: var(--wp--preset--spacing--md, 1.5rem);
+    font-style: italic;
+    margin-block: var(--wp--preset--spacing--lg, 2rem);
+}
+
+.wp-block-quote cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--wp--preset--color--neutral-700, #424242);
+    margin-block-start: var(--wp--preset--spacing--sm, 1rem);
+    display: block;
+}
+
+/**
+ * Pull Quote Enhancement
+ */
+.wp-block-pullquote {
+    border-block: 4px solid var(--wp--preset--color--primary, #1A73E8);
+    padding: var(--wp--preset--spacing--lg, 2rem);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+/**
+ * Mobile Optimizations
+ */
+@media (max-width: 781px) {
+    .wp-block-post-navigation-link {
+        padding: var(--wp--preset--spacing--sm, 1rem);
+    }
+    
+    .wp-block-comment-template .children {
+        margin-inline-start: var(--wp--preset--spacing--md, 1.5rem);
+    }
+    
+    .wp-block-post-author-biography {
+        padding: var(--wp--preset--spacing--md, 1.5rem);
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/**
+ * Focus States
+ */
+.wp-block-post-navigation-link a:focus-visible,
+.wp-block-comment-reply-link a:focus-visible,
+.wp-block-post-comments-form input:focus-visible,
+.wp-block-post-comments-form textarea:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary, #1A73E8);
+    outline-offset: 2px;
+}
+
+/**
+ * Reduced Motion
+ */
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-post-navigation-link {
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .wp-block-comments,
+    .wp-block-post-comments-form {
+        display: none;
+    }
+}
