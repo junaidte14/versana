@@ -135,12 +135,6 @@ function versana_get_option_tabs() {
             'callback' => 'versana_render_blog_tab',
             'priority' => 40,
         ),
-        'performance' => array(
-            'title'    => __( 'Performance', 'versana' ),
-            'icon'     => 'dashicons-performance',
-            'callback' => 'versana_render_performance_tab',
-            'priority' => 50,
-        ),
         'integrations' => array(
             'title'    => __( 'Integrations', 'versana' ),
             'icon'     => 'dashicons-admin-links',

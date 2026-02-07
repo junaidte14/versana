@@ -33,25 +33,14 @@ function versana_sanitize_options( $input ) {
         'enable_header_cta',
         
         // Footer
-        'enable_footer_widgets',
         'enable_back_to_top',
         
         // Blog
         'enable_reading_time',
         'enable_share_buttons',
         'enable_author_box',
-        'enable_related_posts',
-        'enable_toc',
+        'enable_related_posts'
         
-        // Performance
-        'lazy_load_images',
-        'disable_emojis',
-        'disable_embeds',
-        'remove_query_strings',
-        
-        // Advanced
-        'enable_developer_mode',
-        'disable_gutenberg_css',
     );
     
     foreach ( $boolean_fields as $field ) {
@@ -61,10 +50,9 @@ function versana_sanitize_options( $input ) {
     // Select fields with allowed values
     $select_fields = array(
         'header_layout'          => array( 'default', 'centered' ),
-        'footer_columns'         => array( '1', '2', '3', '4' ),
-        'blog_layout'            => array( '2col', 'list', '3col' ),
+        'blog_layout'            => array( 'list', '2col', '3col' ),
         'blog_sidebar_position'  => array( 'left', 'right', 'none' ),
-        'archive_layout'         => array( 'inherit', '2col', '3col', 'list' ),
+        'archive_layout'         => array( 'list', '2col', '3col' ),
     );
     
     foreach ( $select_fields as $field => $allowed_values ) {

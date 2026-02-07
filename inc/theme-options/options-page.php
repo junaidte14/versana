@@ -448,9 +448,6 @@ function versana_render_blog_tab() {
                     </th>
                     <td>
                         <select id="archive_layout" name="versana_theme_options[archive_layout]">
-                            <option value="inherit" <?php selected( versana_get_option( 'archive_layout' ), 'inherit' ); ?>>
-                                <?php esc_html_e( 'Same as Blog Layout', 'versana' ); ?>
-                            </option>
                             <option value="list" <?php selected( versana_get_option( 'archive_layout' ), 'list' ); ?>>
                                 <?php esc_html_e( 'Standard List', 'versana' ); ?>
                             </option>
@@ -538,23 +535,6 @@ function versana_render_blog_tab() {
                     </td>
                 </tr>
                 
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Table of Contents', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_toc]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_toc' ), true ); ?> />
-                            <?php esc_html_e( 'Auto-generate table of contents', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Automatically creates TOC from H2-H4 headings. Great for long posts.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
             </tbody>
         </table>
         
@@ -566,96 +546,6 @@ function versana_render_blog_tab() {
          */
         do_action( 'versana_blog_tab_settings' );
         ?>
-    </div>
-    <?php
-}
-
-/**
- * Render Performance tab
- */
-function versana_render_performance_tab() {
-    ?>
-    <div class="versana-tab-content">
-        <h2><?php esc_html_e( 'Performance Optimization', 'versana' ); ?></h2>
-        <p class="description">
-            <?php esc_html_e( 'Optimize your site for speed and performance.', 'versana' ); ?>
-        </p>
-        
-        <table class="form-table" role="presentation">
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Image Optimization', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[lazy_load_images]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'lazy_load_images' ), true ); ?> />
-                            <?php esc_html_e( 'Enable lazy loading for images', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Images load only when they\'re about to enter the viewport.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Disable Emojis', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[disable_emojis]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'disable_emojis' ), true ); ?> />
-                            <?php esc_html_e( 'Remove WordPress emoji scripts', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Reduces HTTP requests. Modern browsers support emojis natively.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Disable Embeds', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[disable_embeds]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'disable_embeds' ), true ); ?> />
-                            <?php esc_html_e( 'Remove WordPress embed scripts', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Disables oEmbed discovery. Only disable if you don\'t use embeds.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Query Strings', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[remove_query_strings]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'remove_query_strings' ), true ); ?> />
-                            <?php esc_html_e( 'Remove query strings from static resources', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Some caching systems cache better without query strings.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
     <?php
 }
@@ -812,41 +702,6 @@ function versana_render_advanced_tab() {
                     </td>
                 </tr>
                 
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Developer Mode', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_developer_mode]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_developer_mode' ), true ); ?> />
-                            <?php esc_html_e( 'Enable developer mode', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Shows additional debugging information. Only enable during development.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Gutenberg CSS', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[disable_gutenberg_css]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'disable_gutenberg_css' ), true ); ?> />
-                            <?php esc_html_e( 'Disable default Gutenberg block CSS', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'For advanced users who want complete control over block styles.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
             </tbody>
         </table>
         

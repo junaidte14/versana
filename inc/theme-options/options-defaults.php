@@ -33,26 +33,17 @@ function versana_get_default_options() {
         'enable_header_cta'        => false,
 
         // Footer Tab
-        'footer_columns'           => '4',
-        'enable_footer_widgets'    => true,
         'enable_back_to_top'       => true,
         'footer_copyright'         => '',
 
         // Blog Tab
         'blog_layout'              => 'list',
         'blog_sidebar_position'    => 'right',
-        'archive_layout'           => 'inherit',
+        'archive_layout'           => 'list',
         'enable_reading_time'      => true,
         'enable_share_buttons'     => true,
         'enable_author_box'        => true,
         'enable_related_posts'     => true,
-        'enable_toc'               => false,
-        
-        // Performance Tab
-        'lazy_load_images'         => true,
-        'disable_emojis'           => false,
-        'disable_embeds'           => false,
-        'remove_query_strings'     => false,
         
         // Integrations Tab
         'google_analytics_id'      => '',
@@ -62,9 +53,7 @@ function versana_get_default_options() {
         'footer_scripts'           => '',
         
         // Advanced Tab
-        'custom_css'               => '',
-        'enable_developer_mode'    => false,
-        'disable_gutenberg_css'    => false,
+        'custom_css'               => ''
     );
     
     /**
