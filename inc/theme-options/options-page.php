@@ -2,8 +2,7 @@
 /**
  * Versana Theme Options Admin Page
  *
- * Renders the admin interface for ADVANCED settings only.
- * Design customization happens in Site Editor.
+ * V1.0.0 Simplified - Core Features Only
  *
  * @package Versana
  * @since 1.0.0
@@ -87,9 +86,12 @@ function versana_render_options_page() {
         </h2>
         
         <!-- Tab Content -->
-        <form method="post" action="options.php">
+        <form method="post" action="options.php" id="versana-theme-options">
             <?php
             settings_fields( 'versana_options' );
+            
+            // CRITICAL: Add nonce field for security
+            wp_nonce_field( 'versana_save_options', 'versana_options_nonce' );
             
             // Render active tab
             if ( isset( $tabs[ $active_tab ]['callback'] ) && is_callable( $tabs[ $active_tab ]['callback'] ) ) {
@@ -119,59 +121,8 @@ function versana_render_options_page() {
     <?php
 }
 
-function versana_render_general_tab() {
-    ?>
-    <div class="versana-tab-content">
-        <h2><?php esc_html_e( 'Theme Features', 'versana' ); ?></h2>
-        <p class="description">
-            <?php esc_html_e( 'Enable or disable theme features to customize functionality.', 'versana' ); ?>
-        </p>
-        
-        <table class="form-table" role="presentation">
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Breadcrumbs', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_breadcrumbs]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_breadcrumbs' ), true ); ?> />
-                            <?php esc_html_e( 'Show breadcrumb navigation', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Displays navigation path (Home > Blog > Post). Good for SEO and UX.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Dark Mode', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_dark_mode]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_dark_mode' ), true ); ?> />
-                            <?php esc_html_e( 'Enable dark mode toggle', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Adds dark mode switcher. Coming in future episodes!', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </div>
-    <?php
-}
-
 /**
- * Render Header Tab
+ * Render Header Tab - V1.0.0 Simplified
  */
 function versana_render_header_tab() {
     ?>
@@ -223,55 +174,14 @@ function versana_render_header_tab() {
                         </p>
                     </td>
                 </tr>
-                
-                <!-- Search Integration -->
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Header Search', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_header_search]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_header_search' ), true ); ?> />
-                            <?php esc_html_e( 'Show search in header', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Displays search form in header area.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <!-- Header CTA Button -->
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'CTA Button', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_header_cta]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_header_cta' ), true ); ?> />
-                            <?php esc_html_e( 'Show call-to-action button in header', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Configure button in Site Editor → Header template.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
             </tbody>
         </table>
         
         <?php
         /**
-         * Action to add custom header settings
+         * Extensibility Hook: Add custom header settings
          *
-         * Child themes can use this to add their own header options.
-         *
-         * Example:
-         * add_action( 'versana_header_tab_settings', 'child_add_header_logo_settings' );
+         * @since 1.0.0
          */
         do_action( 'versana_header_tab_settings' );
         ?>
@@ -280,7 +190,7 @@ function versana_render_header_tab() {
 }
 
 /**
- * Render Footer Tab
+ * Render Footer Tab - V1.0.0 Simplified
  */
 function versana_render_footer_tab() {
     ?>
@@ -292,7 +202,6 @@ function versana_render_footer_tab() {
         
         <table class="form-table" role="presentation">
             <tbody>
-                
                 <!-- Back to Top Button -->
                 <tr>
                     <th scope="row">
@@ -327,51 +236,18 @@ function versana_render_footer_tab() {
                                class="large-text" 
                                placeholder="&copy; {year} {site_name}. All rights reserved." />
                         <p class="description">
-                            <?php esc_html_e( 'Enter your copyright text. Use {year} for automatic year replacement and {site_name} for automatic site name display.', 'versana' ); ?><br>
-                            <?php //esc_html_e( 'Available shortcodes: [year], [site_name], [copyright]', 'versana' ); ?>
+                            <?php esc_html_e( 'Enter your copyright text. Use {year} for automatic year replacement and {site_name} for automatic site name display.', 'versana' ); ?>
                         </p>
                     </td>
                 </tr>
-                
             </tbody>
         </table>
         
-        <!-- Footer Template Instructions -->
-        <div class="versana-footer-info" style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #2271b1;">
-            <h3 style="margin-top: 0;"><?php esc_html_e( 'Footer Layout & Content', 'versana' ); ?></h3>
-            <p>
-                <?php esc_html_e( 'To customize your footer layout and content:', 'versana' ); ?>
-            </p>
-            <ol style="margin-left: 1.5rem;">
-                <li><strong><?php esc_html_e( 'Go to:', 'versana' ); ?></strong> <?php esc_html_e( 'Appearance → Editor → Template Parts → Footer', 'versana' ); ?></li>
-                <li><strong><?php esc_html_e( 'Edit:', 'versana' ); ?></strong> <?php esc_html_e( 'Add or modify columns, menus, social links, text', 'versana' ); ?></li>
-                <li><strong><?php esc_html_e( 'Use:', 'versana' ); ?></strong> <?php esc_html_e( 'Core WordPress blocks (Columns, Navigation, Social Links)', 'versana' ); ?></li>
-            </ol>
-            
-            <h4><?php esc_html_e( 'Available Shortcodes for Footer templates:', 'versana' ); ?></h4>
-            <ul style="margin-left: 1.5rem;">
-                <li><code>[year]</code> - <?php esc_html_e( 'Displays current year (e.g., 2026)', 'versana' ); ?></li>
-                <li><code>[site_name]</code> - <?php esc_html_e( 'Displays your site name', 'versana' ); ?></li>
-                <li><code>[copyright]</code> - <?php esc_html_e( 'Displays full copyright text from above', 'versana' ); ?></li>
-            </ul>
-            
-            <h4><?php esc_html_e( 'Example Usage:', 'versana' ); ?></h4>
-            <p style="background: white; padding: 1rem; border-radius: 4px; font-family: monospace;">
-                &copy; [year] [site_name]. <?php esc_html_e( 'All rights reserved.', 'versana' ); ?>
-            </p>
-            
-            <p style="margin-top: 1.5rem;">
-                <a href="<?php echo esc_url( admin_url( 'site-editor.php?path=/patterns' ) ); ?>" class="button button-primary">
-                    <span class="dashicons dashicons-edit" style="margin-top: 3px;"></span>
-                    <?php esc_html_e( 'Edit Footer Template', 'versana' ); ?>
-                </a>
-            </p>
-        </div>
-        
         <?php
         /**
-         * Action to add custom footer settings
-         * Child themes can use this to add their own footer options.
+         * Extensibility Hook: Add custom footer settings
+         *
+         * @since 1.0.0
          */
         do_action( 'versana_footer_tab_settings' );
         ?>
@@ -380,7 +256,7 @@ function versana_render_footer_tab() {
 }
 
 /**
- * Render Blog Tab
+ * Render Blog Tab - V1.0.0 Simplified
  */
 function versana_render_blog_tab() {
     ?>
@@ -404,10 +280,10 @@ function versana_render_blog_tab() {
                                 <?php esc_html_e( 'Standard List', 'versana' ); ?>
                             </option>
                             <option value="2col" <?php selected( versana_get_option( 'blog_layout' ), '2col' ); ?>>
-                                <?php esc_html_e( 'Two Columns Grid Layout', 'versana' ); ?>
+                                <?php esc_html_e( 'Two Columns Grid', 'versana' ); ?>
                             </option>
                             <option value="3col" <?php selected( versana_get_option( 'blog_layout' ), '3col' ); ?>>
-                                <?php esc_html_e( 'Three Columns Grid Layout', 'versana' ); ?>
+                                <?php esc_html_e( 'Three Columns Grid', 'versana' ); ?>
                             </option>
                         </select>
                         <p class="description">
@@ -452,10 +328,10 @@ function versana_render_blog_tab() {
                                 <?php esc_html_e( 'Standard List', 'versana' ); ?>
                             </option>
                             <option value="2col" <?php selected( versana_get_option( 'archive_layout' ), '2col' ); ?>>
-                                <?php esc_html_e( 'Two Columns Grid Layout', 'versana' ); ?>
+                                <?php esc_html_e( 'Two Columns Grid', 'versana' ); ?>
                             </option>
                             <option value="3col" <?php selected( versana_get_option( 'archive_layout' ), '3col' ); ?>>
-                                <?php esc_html_e( 'Three Columns Grid Layout', 'versana' ); ?>
+                                <?php esc_html_e( 'Three Columns Grid', 'versana' ); ?>
                             </option>
                         </select>
                         <p class="description">
@@ -463,86 +339,14 @@ function versana_render_blog_tab() {
                         </p>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Reading Time', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_reading_time]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_reading_time' ), true ); ?> />
-                            <?php esc_html_e( 'Show estimated reading time', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Displays "5 min read" on posts. Improves user experience.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Share Buttons', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_share_buttons]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_share_buttons' ), true ); ?> />
-                            <?php esc_html_e( 'Show social share buttons', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Adds share buttons for Facebook, Twitter, LinkedIn, WhatsApp.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Author Box', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_author_box]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_author_box' ), true ); ?> />
-                            <?php esc_html_e( 'Show author bio box', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Displays author bio, avatar, and social links at end of posts.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">
-                        <?php esc_html_e( 'Related Posts', 'versana' ); ?>
-                    </th>
-                    <td>
-                        <label>
-                            <input type="checkbox" 
-                                   name="versana_theme_options[enable_related_posts]" 
-                                   value="1" 
-                                   <?php checked( versana_get_option( 'enable_related_posts' ), true ); ?> />
-                            <?php esc_html_e( 'Show related posts', 'versana' ); ?>
-                        </label>
-                        <p class="description">
-                            <?php esc_html_e( 'Shows 3-4 related posts at the end of each post. Increases engagement.', 'versana' ); ?>
-                        </p>
-                    </td>
-                </tr>
-                
             </tbody>
         </table>
         
         <?php
         /**
-         * Action to add custom blog settings
+         * Extensibility Hook: Add custom blog settings
          *
-         * Child themes can use this to add their own blog options.
+         * @since 1.0.0
          */
         do_action( 'versana_blog_tab_settings' );
         ?>
@@ -551,7 +355,7 @@ function versana_render_blog_tab() {
 }
 
 /**
- * Render Integrations tab
+ * Render Integrations tab - V1.0.0
  */
 function versana_render_integrations_tab() {
     ?>
@@ -668,12 +472,21 @@ function versana_render_integrations_tab() {
                 <?php endif; ?>
             </tbody>
         </table>
+        
+        <?php
+        /**
+         * Extensibility Hook: Add custom integration settings
+         *
+         * @since 1.0.0
+         */
+        do_action( 'versana_integrations_tab_settings' );
+        ?>
     </div>
     <?php
 }
 
 /**
- * Render Advanced tab
+ * Render Advanced tab - V1.0.0
  */
 function versana_render_advanced_tab() {
     ?>
@@ -701,7 +514,6 @@ function versana_render_advanced_tab() {
                         </p>
                     </td>
                 </tr>
-                
             </tbody>
         </table>
         
@@ -714,6 +526,15 @@ function versana_render_advanced_tab() {
                 <?php esc_html_e( 'Reset to Defaults', 'versana' ); ?>
             </button>
         </div>
+        
+        <?php
+        /**
+         * Extensibility Hook: Add custom advanced settings
+         *
+         * @since 1.0.0
+         */
+        do_action( 'versana_advanced_tab_settings' );
+        ?>
     </div>
     <?php
 }

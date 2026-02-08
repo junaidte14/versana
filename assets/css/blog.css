@@ -397,11 +397,9 @@ main.front-page {
 }
 
 /**
- * Sidebar Sticky Behavior
+ * Sidebar Styles
  */
 .blog-sidebar {
-    position: sticky;
-    top: calc(var(--wp-admin--admin-bar--height, 0px) + 2rem);
     margin-block-start: 0;
     padding: 0;
 }

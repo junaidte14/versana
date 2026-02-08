@@ -3,7 +3,7 @@ Theme Name: Versana
 Theme URI: https://codoplex.com/
 Author: CODOPLEX
 Author URI: https://codoplex.com
-Description: A modern, versatile full site editing block theme.
+Description: A modern, performance-focused WordPress block theme optimized for blogs. Features full site editing support, flexible layouts, and minimal custom CSS for fast load times.
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
@@ -11,5 +11,382 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: versana
-Tags: full-site-editing, block-patterns, wide-blocks, custom-colors, translation-ready
+Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks, accessibility-ready
 */
+
+/**
+ * =================================================================
+ * Versana Theme - Minimal CSS Approach
+ * =================================================================
+ * 
+ * This theme relies primarily on theme.json for styling.
+ * Only essential styles that cannot be handled by theme.json are included here.
+ * 
+ * Contents:
+ * 1. Form Elements
+ * 2. WordPress Default Classes
+ * 3. Accessibility
+ * 4. Print Styles
+ */
+
+/* =================================================================
+   1. Form Elements - Not fully handled by theme.json
+   ================================================================= */
+
+/**
+ * Input Fields
+ * Standard form inputs with consistent styling
+ */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+textarea,
+select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--wp--preset--color--neutral-300);
+    border-radius: 4px;
+    font-size: var(--wp--preset--font-size--base);
+    font-family: inherit;
+    line-height: 1.5;
+    background-color: var(--wp--preset--color--neutral-100);
+    color: var(--wp--preset--color--neutral-900);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    max-width: 100%;
+    width: 100%;
+}
+
+/**
+ * Input Focus States
+ */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--wp--preset--color--primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+/**
+ * Textarea Specific
+ */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/**
+ * Select Dropdown
+ */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23424242' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+/**
+ * Checkbox and Radio
+ */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 0.5rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+}
+
+/**
+ * Disabled Inputs
+ */
+input[disabled],
+textarea[disabled],
+select[disabled] {
+    background-color: var(--wp--preset--color--neutral-200);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/**
+ * Fieldset and Legend
+ */
+fieldset {
+    border: 1px solid var(--wp--preset--color--neutral-300);
+    border-radius: 4px;
+    padding: var(--wp--preset--spacing--md);
+    margin-bottom: var(--wp--preset--spacing--md);
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+/**
+ * Form Labels
+ */
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* =================================================================
+   2. WordPress Default Classes
+   ================================================================= */
+
+/**
+ * Image Alignment
+ */
+.alignleft {
+    float: left;
+    margin-right: var(--wp--preset--spacing--md);
+    margin-bottom: var(--wp--preset--spacing--sm);
+}
+
+.alignright {
+    float: right;
+    margin-left: var(--wp--preset--spacing--md);
+    margin-bottom: var(--wp--preset--spacing--sm);
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * Clear Floats
+ */
+.clear::after,
+.entry-content::after,
+.comment-content::after,
+.site-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/**
+ * WordPress Galleries
+ */
+.gallery {
+    margin-bottom: var(--wp--preset--spacing--lg);
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+    font-size: var(--wp--preset--font-size--sm);
+    margin-top: 0.5rem;
+}
+
+/* =================================================================
+   3. Accessibility
+   ================================================================= */
+
+/**
+ * Screen Reader Text
+ * Hides content visually while keeping it accessible to screen readers
+ */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: var(--wp--preset--color--neutral-100);
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: var(--wp--preset--color--primary);
+    display: block;
+    font-size: var(--wp--preset--font-size--sm);
+    font-weight: 600;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/**
+ * Focus Visible Styles
+ * Clear focus indicators for keyboard navigation
+ */
+:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+/**
+ * Skip to Content Link
+ */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--neutral-100);
+    padding: var(--wp--preset--spacing--sm) var(--wp--preset--spacing--md);
+    text-decoration: none;
+    z-index: 10000;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/**
+ * Reduced Motion Support
+ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =================================================================
+   4. Print Styles
+   ================================================================= */
+
+@media print {
+    /**
+     * Hide non-essential elements when printing
+     */
+    .site-header,
+    .site-footer,
+    .sidebar,
+    .navigation,
+    .comment-form,
+    .back-to-top,
+    button,
+    .wp-block-button {
+        display: none !important;
+    }
+
+    /**
+     * Optimize content for print
+     */
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    /**
+     * Show URLs for links
+     */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        font-weight: normal;
+    }
+
+    /**
+     * Page breaks
+     */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+}
+
+/* =================================================================
+   5. Custom Styles
+   ================================================================= */
+
+.home main div {
+    margin-block-start: 0;
+}

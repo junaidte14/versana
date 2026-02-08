@@ -1,9 +1,8 @@
 <?php
 /**
- * Versana Default Theme Options
+ * Versana Default Theme Options - V1.0.0 Simplified
  *
- * Defines defaults for ADVANCED features only.
- * Design choices (colors, typography) are in theme.json.
+ * Core features only - Pro features removed for future versions
  *
  * @package Versana
  * @since 1.0.0
@@ -16,34 +15,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Get default theme options
  *
- * These are ADVANCED settings that theme.json cannot handle.
+ * V1.0.0: Core blog features only
  *
  * @return array Default options array
  */
 function versana_get_default_options() {
     $defaults = array(
-        // General Tab
-        'enable_breadcrumbs'       => true,
-        'enable_dark_mode'         => false,
-
         // Header Tab
         'header_layout'            => 'default',
         'enable_sticky_header'     => false,
-        'enable_header_search'     => true,
-        'enable_header_cta'        => false,
 
         // Footer Tab
         'enable_back_to_top'       => true,
-        'footer_copyright'         => '',
+        'footer_copyright'         => '&copy; {year} {site_name}. All rights reserved.',
 
         // Blog Tab
         'blog_layout'              => 'list',
         'blog_sidebar_position'    => 'right',
         'archive_layout'           => 'list',
-        'enable_reading_time'      => true,
-        'enable_share_buttons'     => true,
-        'enable_author_box'        => true,
-        'enable_related_posts'     => true,
         
         // Integrations Tab
         'google_analytics_id'      => '',
@@ -53,13 +42,15 @@ function versana_get_default_options() {
         'footer_scripts'           => '',
         
         // Advanced Tab
-        'custom_css'               => ''
+        'custom_css'               => '',
     );
     
     /**
      * Filter default theme options
      *
-     * Allows child themes to modify defaults.
+     * Allows child themes and plugins to modify defaults.
+     *
+     * @since 1.0.0
      *
      * @param array $defaults Default options
      */
@@ -68,6 +59,8 @@ function versana_get_default_options() {
 
 /**
  * Get a single default option value
+ *
+ * @since 1.0.0
  *
  * @param string $key Option key
  * @return mixed Default value or null

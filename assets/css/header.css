@@ -124,6 +124,6 @@
 
 @media screen and (max-width: 782px) {
     .admin-bar.has-sticky-header.header-is-stuck .site-header {
-        top: 46px;
+        top: 0;
     }
 }

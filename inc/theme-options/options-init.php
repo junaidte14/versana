@@ -111,12 +111,6 @@ add_action( 'admin_enqueue_scripts', 'versana_enqueue_admin_assets' );
  */
 function versana_get_option_tabs() {
     $tabs = array(
-        'general' => array(
-            'title'    => __( 'General', 'versana' ),
-            'icon'     => 'dashicons-admin-settings',
-            'callback' => 'versana_render_general_tab',
-            'priority' => 10,
-        ),
         'header' => array(
             'title'    => __( 'Header', 'versana' ),
             'icon'     => 'dashicons-align-center',
