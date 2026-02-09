@@ -268,7 +268,7 @@ main.front-page {
     background: var(--wp--preset--color--neutral-100, #fff);
     border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
     border-radius: 12px;
-    padding: 15px 0 0 0;
+    padding: 0;
     margin: 0;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -296,7 +296,7 @@ main.front-page {
 .archive-layout-grid .wp-block-post-featured-image,
 .archive-layout-2col .wp-block-post-featured-image,
 .archive-layout-3col .wp-block-post-featured-image {
-    margin: 0 0 var(--wp--preset--spacing--40, 1.5rem) 0;
+    margin: 0;
     border-radius: 0;
 }
 
@@ -319,6 +319,15 @@ main.front-page {
 .archive-layout-3col .post-meta,
 .archive-layout-3col .wp-block-post-excerpt {
     padding-inline: var(--wp--preset--spacing--40, 1.5rem);
+}
+
+.blog-layout-grid .post-meta,
+.blog-layout-2col .post-meta,
+.blog-layout-3col .post-meta,
+.archive-layout-grid .post-meta,
+.archive-layout-2col .post-meta,
+.archive-layout-3col .post-meta{
+    margin-top: var(--wp--preset--spacing--40, 1.5rem);
 }
 
 .blog-layout-grid .wp-block-post-excerpt,

@@ -411,7 +411,7 @@
       "core/paragraph": {
         "spacing": {
           "margin": {
-            "top": "0",
+            "top": "var(--wp--preset--spacing--sm)",
             "bottom": "var(--wp--preset--spacing--sm)"
           }
         }
@@ -419,7 +419,7 @@
       "core/list": {
         "spacing": {
           "margin": {
-            "top": "0",
+            "top": "var(--wp--preset--spacing--sm)",
             "bottom": "var(--wp--preset--spacing--sm)"
           },
           "padding": {

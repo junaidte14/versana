@@ -30,15 +30,22 @@ function versana_get_copyright_text() {
 }
 
 /**
- * Render copyright text shortcode
- * Usage: [copyright]
- *
- * @return string Copyright text
+ * Replace [copyright] placeholder in blocks without using a shortcode
  */
-function versana_copyright_shortcode() {
-    return versana_get_copyright_text();
+function versana_filter_copyright_in_blocks( $block_content, $block ) {
+    // Look for our specific paragraph class or the placeholder text
+    if ( 
+        isset( $block['attrs']['className'] ) && 
+        'footer-copyright' === $block['attrs']['className'] && 
+        str_contains( $block_content, '[copyright]' ) 
+    ) {
+        $dynamic_copyright = versana_get_copyright_text();
+        $block_content = str_replace( '[copyright]', $dynamic_copyright, $block_content );
+    }
+
+    return $block_content;
 }
-add_shortcode( 'copyright', 'versana_copyright_shortcode' );
+add_filter( 'render_block', 'versana_filter_copyright_in_blocks', 10, 2 );
 
 /**
  * Render back to top button
@@ -65,25 +72,3 @@ function versana_add_back_to_top() {
     versana_render_back_to_top();
 }
 add_action( 'wp_footer', 'versana_add_back_to_top', 999 );
-
-/**
- * Get current year shortcode
- * Usage: [year]
- *
- * @return string Current year
- */
-function versana_year_shortcode() {
-    return date( 'Y' );
-}
-add_shortcode( 'year', 'versana_year_shortcode' );
-
-/**
- * Get site name shortcode
- * Usage: [site_name]
- *
- * @return string Site name
- */
-function versana_site_name_shortcode() {
-    return get_bloginfo( 'name' );
-}
-add_shortcode( 'site_name', 'versana_site_name_shortcode' );

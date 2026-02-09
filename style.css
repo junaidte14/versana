@@ -130,6 +130,36 @@ select[disabled] {
 }
 
 /**
+ * Submit Button
+*/
+input[type="submit"]{
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--neutral-100);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--wp--preset--font-size--base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.1s ease;
+    width: auto;
+    display: inline-block;
+}
+
+input[type="submit"]:hover {
+    filter: brightness(1.1);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+input[type="submit"]:focus {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+/**
  * Fieldset and Legend
  */
 fieldset {

@@ -95,16 +95,14 @@ add_action( 'wp_head', 'versana_output_gtm_head', 5 );
  */
 function versana_output_gtm_body() {
     $gtm_id = versana_get_option( 'google_tag_manager_id' );
-    
     if ( empty( $gtm_id ) ) {
         return;
     }
-    
+    // Prepare the URL safely
+    $gtm_url = add_query_arg( 'id', $gtm_id, 'https://www.googletagmanager.com/ns.html' );
     ?>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr( $gtm_id ); ?>"
+    <noscript><iframe src="<?php echo esc_url( $gtm_url ); ?>"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <?php
 }
 add_action( 'wp_body_open', 'versana_output_gtm_body' );
@@ -168,38 +166,3 @@ function versana_output_footer_scripts() {
     echo $footer_scripts;
 }
 add_action( 'wp_footer', 'versana_output_footer_scripts', 100 );
-
-/**
- * Disable emojis if option is enabled
- */
-function versana_disable_emojis() {
-    if ( ! versana_get_option( 'disable_emojis' ) ) {
-        return;
-    }
-    
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-}
-add_action( 'init', 'versana_disable_emojis' );
-
-/**
- * Disable embeds if option is enabled
- */
-function versana_disable_embeds() {
-    if ( ! versana_get_option( 'disable_embeds' ) ) {
-        return;
-    }
-    
-    global $wp;
-    $wp->public_query_vars = array_diff( $wp->public_query_vars, array( 'embed' ) );
-    remove_action( 'rest_api_init', 'wp_oembed_register_route' );
-    remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-}
-add_action( 'init', 'versana_disable_embeds', 9999 );

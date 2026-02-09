@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Loads CSS/JS only when features are enabled
  */
 function versana_enqueue_dynamic_assets() {
+
+    wp_enqueue_style( 'versana-style', get_stylesheet_uri() );
     
     // Check if any header customization is active
     $sticky_enabled = versana_get_option( 'enable_sticky_header' );
