@@ -30,7 +30,7 @@ function versana_body_classes( $classes ) {
     $classes[] = 'header-layout-' . sanitize_html_class( $header_layout );
 
     // Blog Layout (on blog/archive pages)
-    if ( is_home() || is_archive() || is_search() || is_singular('post') ) {
+    if ( is_home() || is_archive() || is_search() || is_singular() ) {
         // Sidebar position
         $sidebar_position = versana_get_option( 'blog_sidebar_position', 'right' );
         $valid_positions = array( 'left', 'right', 'none' );
