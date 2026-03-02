@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "title": "Creative Portfolio",
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "primary", "color": "#9C27B0", "name": "Primary" },
+        { "slug": "secondary", "color": "#E91E63", "name": "Secondary" },
+        { "slug": "tertiary", "color": "#673AB7", "name": "Tertiary" }
+      ]
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#111111",
+      "text": "#F5F5F5"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "var(--wp--preset--color--secondary)" },
+        ":hover": {
+          "color": { "text": "var(--wp--preset--color--primary)" }
+        }
+      },
+      "button": {
+        "border": { "radius": "999px" },
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "#ffffff"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontWeight": "800",
+          "letterSpacing": "-0.03em"
+        }
+      }
+    },
+    "blocks": {
+      "core/quote": {
+        "border": {
+          "color": "var(--wp--preset--color--secondary)"
+        }
+      },
+      "core/code": {
+        "color": {
+          "background": "#1E1E1E",
+          "text": "#F5F5F5"
+        }
+      }
+    }
+  }
+}

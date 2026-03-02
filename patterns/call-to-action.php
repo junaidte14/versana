@@ -8,8 +8,8 @@
  * Description: A large section to showcase call to action section.
  */
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|2xl","bottom":"var:preset|spacing|2xl","left":"var:preset|spacing|md","right":"var:preset|spacing|md"}}},"gradient":"primary-gradient","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-primary-gradient-gradient-background has-background"
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|2xl","bottom":"var:preset|spacing|2xl","left":"var:preset|spacing|md","right":"var:preset|spacing|md"}}},"gradient":"warm-gradient","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-warm-gradient-gradient-background has-background"
     style="padding-top:var(--wp--preset--spacing--2-xl);padding-right:var(--wp--preset--spacing--md);padding-bottom:var(--wp--preset--spacing--2-xl);padding-left:var(--wp--preset--spacing--md)">
     <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|lg"}},"layout":{"type":"constrained","contentSize":"800px"}} -->
     <div class="wp-block-group alignwide">

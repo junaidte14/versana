@@ -417,6 +417,11 @@ label {
    5. Custom Styles
    ================================================================= */
 
+.home main,
 .home main div {
     margin-block-start: 0;
+}
+
+.home .wp-block-post-title{
+    display: none;
 }

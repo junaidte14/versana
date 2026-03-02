@@ -52,9 +52,9 @@ main.front-page {
  * Clean, professional spacing
  */
 .wp-block-post-template > li {
-    margin-block-end: var(--wp--preset--spacing--60, 3rem);
+    /*margin-block-end: var(--wp--preset--spacing--60, 3rem);
     padding-block-end: var(--wp--preset--spacing--60, 3rem);
-    border-block-end: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
+    border-block-end: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));*/
 }
 
 .wp-block-post-template > li:last-child {
@@ -379,7 +379,11 @@ main.front-page {
  * Right Sidebar (Default)
  */
 .has-sidebar.sidebar-right .blog-archive-group {
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.has-sidebar.sidebar-right .blog-archive-group > *:first-child{
+    width: 100%;
 }
 
 /**
