@@ -4,13 +4,11 @@
  * Slug: versana/hero-banner
  * Categories: versana-sections
  * Keywords: hero, banner, cover
- * Block Types: core/cover
  * Description: A large hero section with primary gradient, heading, paragraph and CTA buttons.
  */
 ?>
 <!-- wp:cover {"url":"","isUserOverlayColor":true,"minHeight":85,"minHeightUnit":"vh","gradient":"primary-gradient","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|2xl","bottom":"var:preset|spacing|2xl","left":"var:preset|spacing|md","right":"var:preset|spacing|md"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-cover alignfull is-light"
-    style="padding-top:var(--wp--preset--spacing--2-xl);padding-right:var(--wp--preset--spacing--md);padding-bottom:var(--wp--preset--spacing--2-xl);padding-left:var(--wp--preset--spacing--md);min-height:85vh">
+<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--2-xl);padding-right:var(--wp--preset--spacing--md);padding-bottom:var(--wp--preset--spacing--2-xl);padding-left:var(--wp--preset--spacing--md);min-height:85vh">
     <span aria-hidden="true"
         class="wp-block-cover__background has-background-dim-100 has-background-dim has-background-gradient has-primary-gradient-gradient-background"></span>
     <div class="wp-block-cover__inner-container">
