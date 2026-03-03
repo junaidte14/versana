@@ -6,7 +6,12 @@
       "palette": [
         { "slug": "primary", "color": "#9C27B0", "name": "Primary" },
         { "slug": "secondary", "color": "#E91E63", "name": "Secondary" },
-        { "slug": "tertiary", "color": "#673AB7", "name": "Tertiary" }
+        { "slug": "tertiary", "color": "#673AB7", "name": "Tertiary" },
+        {
+          "slug": "neutral-100",
+          "color": "#FFFFFF",
+          "name": "Neutral 100"
+        }
       ]
     },
     "typography": {
@@ -14,10 +19,6 @@
     }
   },
   "styles": {
-    "color": {
-      "background": "#111111",
-      "text": "#F5F5F5"
-    },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--system-sans)",
       "lineHeight": "1.6"
@@ -30,10 +31,10 @@
         }
       },
       "button": {
-        "border": { "radius": "999px" },
+        "border": { "radius": "2px" },
         "color": {
           "background": "var(--wp--preset--color--primary)",
-          "text": "#ffffff"
+          "text": "var(--wp--preset--color--neutral-100)"
         }
       },
       "h1": {

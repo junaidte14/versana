@@ -10,20 +10,8 @@
 add_action( 'init', 'versana_register_pattern_categories' );
 function versana_register_pattern_categories() {
     register_block_pattern_category(
-        'versana-headers',
-        array( 'label' => __( 'Versana Headers', 'versana' ) )
-    );
-    register_block_pattern_category(
-        'versana-footers',
-        array( 'label' => __( 'Versana Footers', 'versana' ) )
-    );
-    register_block_pattern_category(
         'versana-sections',
         array( 'label' => __( 'Versana Sections', 'versana' ) )
-    );
-    register_block_pattern_category(
-        'landing-pages',
-        array( 'label' => __( 'Landing Pages', 'versana' ) )
     );
 }
 
