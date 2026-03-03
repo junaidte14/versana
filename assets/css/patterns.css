@@ -1,0 +1,562 @@
+/**
+ * Versana Theme - Pattern Styles
+ * 
+ * Professional styling for block patterns
+ * 
+ * @package Versana
+ * @since 1.0.0
+ */
+
+/* ============================================
+   SHADOWS
+   ============================================ */
+
+.has-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.has-shadow:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.has-shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.has-shadow-sm:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.has-shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.has-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.has-shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================
+   ICON CIRCLES
+   ============================================ */
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-circle p {
+    margin: 0 !important;
+}
+
+/* ============================================
+   PROCESS TIMELINE - STEP NUMBERS
+   ============================================ */
+
+.step-number {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.step-number:hover {
+    transform: scale(1.1);
+}
+
+.step-number p {
+    margin: 0 !important;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.wp-block-column:has(.has-shadow) {
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   LOGO CARDS
+   ============================================ */
+
+.logo-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-card p {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-card:hover p {
+    opacity: 1;
+}
+
+/* ============================================
+   PORTFOLIO GALLERY
+   ============================================ */
+
+.portfolio-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item .wp-block-cover {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .wp-block-cover {
+    transform: scale(1.05);
+}
+
+.portfolio-item .wp-block-cover__inner-container {
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .wp-block-cover__inner-container {
+    opacity: 1;
+}
+
+/* ============================================
+   DETAILS/SUMMARY (FAQ)
+   ============================================ */
+
+.wp-block-details {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.wp-block-details:hover {
+    border-color: #1A73E8;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+}
+
+.wp-block-details summary {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    font-size: 1.125rem;
+}
+
+.wp-block-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.wp-block-details summary::before {
+    content: '+';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
+    background-color: #1A73E8;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.wp-block-details[open] summary::before {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.wp-block-details summary:hover {
+    color: #1A73E8;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.wp-block-button__link {
+    transition: all 0.3s ease;
+}
+
+.wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wp-block-button__link:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   CHECKMARK LIST (for pricing tables)
+   ============================================ */
+
+.is-style-checkmark-list {
+    list-style: none;
+}
+
+.is-style-checkmark-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.is-style-checkmark-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   FOOTER LINKS
+   ============================================ */
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.is-style-no-bullets {
+    list-style: none;
+}
+
+/* ============================================
+   PRICING TABLES
+   ============================================ */
+
+.wp-block-columns:has(.wp-block-button__width-100) .wp-block-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.wp-block-columns:has(.wp-block-button__width-100) .wp-block-buttons {
+    margin-top: auto;
+}
+
+/* Popular plan styling */
+.wp-block-column:has([style*="MOST POPULAR"]) {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 782px) {
+    .wp-block-column:has([style*="MOST POPULAR"]) {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.wp-block-group:has(.has-4xl-font-size) .wp-block-columns {
+    text-align: center;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+
+.wp-block-group:has(.team-member) img,
+.wp-block-group:has([style*="5rem"]) .wp-block-group {
+    transition: transform 0.3s ease;
+}
+
+.wp-block-group:has(.team-member):hover img,
+.wp-block-column:hover .wp-block-group:has([style*="5rem"]) .wp-block-group {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CONTACT SECTION ICONS
+   ============================================ */
+
+.wp-block-group:has([style*="📧"]) .wp-block-group:first-child,
+.wp-block-group:has([style*="📞"]) .wp-block-group:first-child,
+.wp-block-group:has([style*="📍"]) .wp-block-group:first-child {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   CASE STUDY GRADIENTS
+   ============================================ */
+
+.wp-block-column:has(.has-primary-gradient-gradient-background) {
+    transition: transform 0.3s ease;
+}
+
+.wp-block-column:has(.has-primary-gradient-gradient-background):hover {
+    transform: translateY(-4px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 781px) {
+    /* Stack columns on mobile */
+    .wp-block-columns {
+        flex-direction: column;
+    }
+    
+    /* Reduce spacing on mobile */
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-circle p {
+        font-size: 1.5rem !important;
+    }
+    
+    .step-number {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Adjust pricing cards */
+    .wp-block-column:has([style*="MOST POPULAR"]) {
+        transform: none !important;
+    }
+    
+    /* Smaller headings on mobile */
+    .has-4-xl-font-size {
+        font-size: 2.5rem !important;
+    }
+    
+    .has-3-xl-font-size {
+        font-size: 2rem !important;
+    }
+    
+    /* Portfolio gallery - stack on mobile */
+    .portfolio-item .wp-block-cover {
+        min-height: 300px !important;
+    }
+    
+    /* Logo cards - smaller on mobile */
+    .logo-card p {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus states */
+.wp-block-button__link:focus,
+.wp-block-details summary:focus,
+.footer-links a:focus,
+.portfolio-item:focus-within {
+    outline: 2px solid #1A73E8;
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .has-shadow,
+    .has-shadow-sm,
+    .has-shadow-md,
+    .has-shadow-lg,
+    .logo-card,
+    .portfolio-item {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .has-shadow,
+    .has-shadow-sm,
+    .has-shadow-md,
+    .has-shadow-lg {
+        box-shadow: none !important;
+        border: 1px solid #000;
+    }
+    
+    .wp-block-button {
+        display: none;
+    }
+    
+    .wp-block-social-links {
+        display: none;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Loading states */
+.is-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ============================================
+   GRADIENT OVERLAYS
+   ============================================ */
+
+.wp-block-cover.has-background-gradient::before {
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+/* ============================================
+   ENHANCED SEPARATORS
+   ============================================ */
+
+.wp-block-separator.is-style-wide {
+    max-width: 100%;
+}
+
+.wp-block-separator:not(.is-style-dots) {
+    height: 1px;
+    background-color: currentColor;
+}
+
+/* ============================================
+   IMAGE EFFECTS
+   ============================================ */
+
+.wp-block-image img {
+    transition: transform 0.3s ease;
+}
+
+.wp-block-image:hover img {
+    transform: scale(1.02);
+}
+
+/* ============================================
+   LINK UNDERLINE EFFECTS
+   ============================================ */
+
+.wp-block-paragraph a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s ease;
+}
+
+.wp-block-paragraph a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* ============================================
+   SMOOTH PAGE TRANSITIONS
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR (Optional)
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ============================================
+   HERO BUSINESS SPLIT
+   ============================================ */
+
+.wp-block-group:has(.alignwide > .wp-block-columns > .wp-block-column[style*="55%"]) {
+    overflow: hidden;
+}
+
+/* Stats in hero */
+.wp-block-group .wp-block-group:has([style*="500+"]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ============================================
+   CONTACT FORM PLACEHOLDER
+   ============================================ */
+
+.wp-block-paragraph:has(strong:contains("Contact Form")) {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
