@@ -1,0 +1,215 @@
+/**
+ * Versana Companion Installer & Updater - Frontend JavaScript
+ *
+ * Handles plugin installation, activation, and updates via AJAX
+ *
+ * @package Versana
+ * @since 1.1.0
+ */
+
+(function($) {
+    'use strict';
+
+    $(document).ready(function() {
+
+        /**
+         * Handle install/activate/update button click
+         */
+        $('.versana-companion-action').on('click', function(e) {
+            e.preventDefault();
+
+            var $button = $(this);
+            var $notice = $button.closest('.versana-companion-notice');
+            var $loader = $notice.find('.versana-companion-loader');
+            var $status = $notice.find('.versana-companion-status');
+            var action = $button.data('action');
+
+            // Disable button and show loader
+            $button.prop('disabled', true);
+            $loader.show();
+
+            // Handle different actions
+            if (action === 'install') {
+                $status.text(versanaCompanion.installingText);
+                installPlugin($button, $notice, $loader, $status);
+            } else if (action === 'activate') {
+                $status.text(versanaCompanion.activatingText);
+                activatePlugin($button, $notice, $loader, $status);
+            } else if (action === 'update') {
+                // Confirm update
+                if (confirm('Are you sure you want to update Versana Companion? The plugin will be temporarily deactivated during the update.')) {
+                    $status.text(versanaCompanion.updatingText);
+                    updatePlugin($button, $notice, $loader, $status);
+                } else {
+                    $button.prop('disabled', false);
+                    $loader.hide();
+                }
+            }
+        });
+
+        /**
+         * Install plugin via AJAX
+         */
+        function installPlugin($button, $notice, $loader, $status) {
+            $.ajax({
+                url: versanaCompanion.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'versana_install_companion',
+                    nonce: versanaCompanion.nonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Installation successful, now activate
+                        $status.text(versanaCompanion.activatingText);
+                        $button.data('action', 'activate');
+                        activatePlugin($button, $notice, $loader, $status);
+                    } else {
+                        showError($button, $loader, $status, response.data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    showError($button, $loader, $status, versanaCompanion.errorText);
+                }
+            });
+        }
+
+        /**
+         * Activate plugin via AJAX
+         */
+        function activatePlugin($button, $notice, $loader, $status) {
+            $.ajax({
+                url: versanaCompanion.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'versana_activate_companion',
+                    nonce: versanaCompanion.nonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        showSuccess($button, $notice, $loader, $status, 'activated');
+                    } else {
+                        showError($button, $loader, $status, response.data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    showError($button, $loader, $status, versanaCompanion.errorText);
+                }
+            });
+        }
+
+        /**
+         * Update plugin via AJAX
+         */
+        function updatePlugin($button, $notice, $loader, $status) {
+            $.ajax({
+                url: versanaCompanion.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'versana_update_companion',
+                    nonce: versanaCompanion.nonce
+                },
+                timeout: 60000, // 60 seconds for update
+                success: function(response) {
+                    if (response.success) {
+                        showSuccess($button, $notice, $loader, $status, 'updated');
+                    } else {
+                        showError($button, $loader, $status, response.data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    if (status === 'timeout') {
+                        showError($button, $loader, $status, 'Update timed out. Please check if the plugin was updated and try refreshing the page.');
+                    } else {
+                        showError($button, $loader, $status, versanaCompanion.errorText);
+                    }
+                }
+            });
+        }
+
+        /**
+         * Show success message and reload
+         */
+        function showSuccess($button, $notice, $loader, $status, actionType) {
+            $status.text(versanaCompanion.successText);
+            $notice.removeClass('notice-warning notice-info').addClass('notice-success');
+            
+            // Update notice content
+            var successMessage = actionType === 'updated' 
+                ? '<strong>Success!</strong> Versana Companion has been updated. Reloading page...'
+                : '<strong>Success!</strong> Versana Companion plugin has been activated. Reloading page...';
+            
+            $notice.find('p:first').html(successMessage);
+            
+            // Hide buttons
+            $button.hide();
+            $('.versana-view-changelog').hide();
+            
+            // Reload page after 1.5 seconds
+            setTimeout(function() {
+                location.reload();
+            }, 1500);
+        }
+
+        /**
+         * Show error message
+         */
+        function showError($button, $loader, $status, message) {
+            $button.prop('disabled', false);
+            $loader.hide();
+            
+            // Show error message
+            var $errorNotice = $('<div class="notice notice-error is-dismissible"><p><strong>Error:</strong> ' + message + '</p></div>');
+            
+            // Find the notice and add error after it
+            var $parentNotice = $button.closest('.versana-companion-notice');
+            $parentNotice.after($errorNotice);
+            
+            // Make dismissible work
+            $(document).trigger('wp-updates-notice-added');
+            
+            // Auto-dismiss after 8 seconds
+            setTimeout(function() {
+                $errorNotice.fadeOut(function() {
+                    $(this).remove();
+                });
+            }, 8000);
+        }
+
+        /**
+         * Manual update check button (optional - for admin page)
+         */
+        $('.versana-check-updates').on('click', function(e) {
+            e.preventDefault();
+            
+            var $button = $(this);
+            var originalText = $button.text();
+            
+            $button.prop('disabled', true).text(versanaCompanion.checkingText);
+            
+            $.ajax({
+                url: versanaCompanion.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'versana_check_companion_update',
+                    nonce: versanaCompanion.nonce
+                },
+                success: function(response) {
+                    if (response.success && response.data.update_available) {
+                        // Reload to show update notice
+                        location.reload();
+                    } else {
+                        $button.prop('disabled', false).text(originalText);
+                        alert(response.data.message || 'You have the latest version.');
+                    }
+                },
+                error: function() {
+                    $button.prop('disabled', false).text(originalText);
+                    alert('Error checking for updates. Please try again.');
+                }
+            });
+        });
+
+    });
+
+})(jQuery);
