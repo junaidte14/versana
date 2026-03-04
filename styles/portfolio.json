@@ -7,51 +7,15 @@
         { "slug": "primary", "color": "#9C27B0", "name": "Primary" },
         { "slug": "secondary", "color": "#E91E63", "name": "Secondary" },
         { "slug": "tertiary", "color": "#673AB7", "name": "Tertiary" },
-        {
-          "slug": "neutral-100",
-          "color": "#FFFFFF",
-          "name": "Neutral 100"
-        },
-        {
-          "slug": "neutral-200",
-          "color": "#F5F5F5",
-          "name": "Neutral 200"
-        },
-        {
-          "slug": "neutral-300",
-          "color": "#E0E0E0",
-          "name": "Neutral 300"
-        },
-        {
-          "slug": "neutral-700",
-          "color": "#424242",
-          "name": "Neutral 700"
-        },
-        {
-          "slug": "neutral-900",
-          "color": "#111111",
-          "name": "Neutral 900"
-        },
-        {
-          "slug": "success",
-          "color": "#4CAF50",
-          "name": "Success"
-        },
-        {
-          "slug": "warning",
-          "color": "#FF9800",
-          "name": "Warning"
-        },
-        {
-          "slug": "error",
-          "color": "#F44336",
-          "name": "Error"
-        },
-        {
-          "slug": "info",
-          "color": "#2196F3",
-          "name": "Info"
-        }
+        { "slug": "neutral-100", "color": "#FFFFFF", "name": "Neutral 100" },
+        { "slug": "neutral-200", "color": "#F5F5F5", "name": "Neutral 200" },
+        { "slug": "neutral-300", "color": "#E0E0E0", "name": "Neutral 300" },
+        { "slug": "neutral-700", "color": "#424242", "name": "Neutral 700" },
+        { "slug": "neutral-900", "color": "#111111", "name": "Neutral 900" },
+        { "slug": "success", "color": "#4CAF50", "name": "Success" },
+        { "slug": "warning", "color": "#FF9800", "name": "Warning" },
+        { "slug": "error", "color": "#F44336", "name": "Error" },
+        { "slug": "info", "color": "#2196F3", "name": "Info" }
       ],
       "gradients": [
         {
@@ -112,19 +76,6 @@
         "typography": {
           "fontWeight": "800",
           "letterSpacing": "-0.03em"
-        }
-      }
-    },
-    "blocks": {
-      "core/quote": {
-        "border": {
-          "color": "var(--wp--preset--color--secondary)"
-        }
-      },
-      "core/code": {
-        "color": {
-          "background": "#1E1E1E",
-          "text": "#F5F5F5"
         }
       }
     }
