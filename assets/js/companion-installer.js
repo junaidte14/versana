@@ -30,15 +30,15 @@
 
             // Handle different actions
             if (action === 'install') {
-                $status.text(versanaCompanion.installingText);
+                $status.text(versanaCompanionInstaller.installingText);
                 installPlugin($button, $notice, $loader, $status);
             } else if (action === 'activate') {
-                $status.text(versanaCompanion.activatingText);
+                $status.text(versanaCompanionInstaller.activatingText);
                 activatePlugin($button, $notice, $loader, $status);
             } else if (action === 'update') {
                 // Confirm update
                 if (confirm('Are you sure you want to update Versana Companion? The plugin will be temporarily deactivated during the update.')) {
-                    $status.text(versanaCompanion.updatingText);
+                    $status.text(versanaCompanionInstaller.updatingText);
                     updatePlugin($button, $notice, $loader, $status);
                 } else {
                     $button.prop('disabled', false);
@@ -52,16 +52,16 @@
          */
         function installPlugin($button, $notice, $loader, $status) {
             $.ajax({
-                url: versanaCompanion.ajaxUrl,
+                url: versanaCompanionInstaller.ajaxUrl,
                 type: 'POST',
                 data: {
                     action: 'versana_install_companion',
-                    nonce: versanaCompanion.nonce
+                    nonce: versanaCompanionInstaller.nonce
                 },
                 success: function(response) {
                     if (response.success) {
                         // Installation successful, now activate
-                        $status.text(versanaCompanion.activatingText);
+                        $status.text(versanaCompanionInstaller.activatingText);
                         $button.data('action', 'activate');
                         activatePlugin($button, $notice, $loader, $status);
                     } else {
@@ -69,7 +69,7 @@
                     }
                 },
                 error: function(xhr, status, error) {
-                    showError($button, $loader, $status, versanaCompanion.errorText);
+                    showError($button, $loader, $status, versanaCompanionInstaller.errorText);
                 }
             });
         }
@@ -79,11 +79,11 @@
          */
         function activatePlugin($button, $notice, $loader, $status) {
             $.ajax({
-                url: versanaCompanion.ajaxUrl,
+                url: versanaCompanionInstaller.ajaxUrl,
                 type: 'POST',
                 data: {
                     action: 'versana_activate_companion',
-                    nonce: versanaCompanion.nonce
+                    nonce: versanaCompanionInstaller.nonce
                 },
                 success: function(response) {
                     if (response.success) {
@@ -93,7 +93,7 @@
                     }
                 },
                 error: function(xhr, status, error) {
-                    showError($button, $loader, $status, versanaCompanion.errorText);
+                    showError($button, $loader, $status, versanaCompanionInstaller.errorText);
                 }
             });
         }
@@ -103,11 +103,11 @@
          */
         function updatePlugin($button, $notice, $loader, $status) {
             $.ajax({
-                url: versanaCompanion.ajaxUrl,
+                url: versanaCompanionInstaller.ajaxUrl,
                 type: 'POST',
                 data: {
                     action: 'versana_update_companion',
-                    nonce: versanaCompanion.nonce
+                    nonce: versanaCompanionInstaller.nonce
                 },
                 timeout: 60000, // 60 seconds for update
                 success: function(response) {
@@ -121,7 +121,7 @@
                     if (status === 'timeout') {
                         showError($button, $loader, $status, 'Update timed out. Please check if the plugin was updated and try refreshing the page.');
                     } else {
-                        showError($button, $loader, $status, versanaCompanion.errorText);
+                        showError($button, $loader, $status, versanaCompanionInstaller.errorText);
                     }
                 }
             });
@@ -131,7 +131,7 @@
          * Show success message and reload
          */
         function showSuccess($button, $notice, $loader, $status, actionType) {
-            $status.text(versanaCompanion.successText);
+            $status.text(versanaCompanionInstaller.successText);
             $notice.removeClass('notice-warning notice-info').addClass('notice-success');
             
             // Update notice content
@@ -185,14 +185,14 @@
             var $button = $(this);
             var originalText = $button.text();
             
-            $button.prop('disabled', true).text(versanaCompanion.checkingText);
+            $button.prop('disabled', true).text(versanaCompanionInstaller.checkingText);
             
             $.ajax({
-                url: versanaCompanion.ajaxUrl,
+                url: versanaCompanionInstaller.ajaxUrl,
                 type: 'POST',
                 data: {
                     action: 'versana_check_companion_update',
-                    nonce: versanaCompanion.nonce
+                    nonce: versanaCompanionInstaller.nonce
                 },
                 success: function(response) {
                     if (response.success && response.data.update_available) {

@@ -403,7 +403,7 @@ class Versana_Companion_Installer {
 
         wp_localize_script(
             'versana-companion-installer',
-            'versanaCompanion',
+            'versanaCompanionInstaller',
             array(
                 'ajaxUrl'        => admin_url( 'admin-ajax.php' ),
                 'nonce'          => wp_create_nonce( 'versana_companion_installer' ),
