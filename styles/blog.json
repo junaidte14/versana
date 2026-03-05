@@ -4,9 +4,9 @@
   "settings": {
     "color": {
       "palette": [
-        { "slug": "primary", "color": "#E91E63", "name": "Primary" },
-        { "slug": "secondary", "color": "#FF9800", "name": "Secondary" },
-        { "slug": "tertiary", "color": "#9C27B0", "name": "Tertiary" },
+        { "slug": "primary", "color": "#9C27B0", "name": "Primary" },
+        { "slug": "secondary", "color": "#E91E63", "name": "Secondary" },
+        { "slug": "tertiary", "color": "#1A73E8", "name": "Tertiary" },
         { "slug": "neutral-100", "color": "#FFFFFF", "name": "Neutral 100" },
         { "slug": "neutral-200", "color": "#F5F5F5", "name": "Neutral 200" },
         { "slug": "neutral-300", "color": "#E0E0E0", "name": "Neutral 300" },

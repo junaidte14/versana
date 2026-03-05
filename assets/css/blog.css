@@ -51,11 +51,6 @@ main.front-page {
  * Individual Post in List
  * Clean, professional spacing
  */
-.wp-block-post-template > li {
-    /*margin-block-end: var(--wp--preset--spacing--60, 3rem);
-    padding-block-end: var(--wp--preset--spacing--60, 3rem);
-    border-block-end: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));*/
-}
 
 .wp-block-post-template > li:last-child {
     border-block-end: none;
@@ -113,6 +108,18 @@ main.front-page {
 
 .post-meta > * {
     margin: 0;
+}
+
+.archive.archive-layout-list .post-meta {
+    margin-top: 20px;
+}
+
+.taxonomy-category .wp-block-post-terms__separator{
+    display: none;
+}
+
+.taxonomy-category a{
+    margin-right: 5px;
 }
 
 /**
