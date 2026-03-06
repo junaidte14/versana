@@ -84,11 +84,11 @@
     "elements": {
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--primary)"
+          "text": "var(--wp--preset--color--neutral-900)"
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--secondary)"
+            "text": "var(--wp--preset--color--neutral-700)"
           }
         }
       },
