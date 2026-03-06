@@ -226,11 +226,6 @@ main.front-page {
     gap: 0.75rem;
 }
 
-.wp-block-post-excerpt__more-text::after {
-    content: "→";
-    font-size: 1.25em;
-}
-
 /* ==========================================================================
    Multi-Column Grid Layout (Custom Template)
    ========================================================================== */
