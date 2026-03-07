@@ -1,0 +1,174 @@
+{
+  "version": 2,
+  "title": "Fitness & Wellness",
+  "settings": {
+    "color": {
+      "palette": [
+        { 
+          "slug": "primary", 
+          "color": "#14B8A6", 
+          "name": "Primary" 
+        },
+        { 
+          "slug": "secondary", 
+          "color": "#0891B2", 
+          "name": "Secondary" 
+        },
+        { 
+          "slug": "tertiary", 
+          "color": "#0F172A", 
+          "name": "Tertiary" 
+        },
+        { 
+          "slug": "accent", 
+          "color": "#F97316", 
+          "name": "Accent" 
+        },
+        { 
+          "slug": "neutral-100", 
+          "color": "#FFFFFF", 
+          "name": "Neutral 100" 
+        },
+        { 
+          "slug": "neutral-200", 
+          "color": "#F0FDFA", 
+          "name": "Neutral 200" 
+        },
+        { 
+          "slug": "neutral-300", 
+          "color": "#CCFBF1", 
+          "name": "Neutral 300" 
+        },
+        { 
+          "slug": "neutral-700", 
+          "color": "#334155", 
+          "name": "Neutral 700" 
+        },
+        { 
+          "slug": "neutral-900", 
+          "color": "#0F172A", 
+          "name": "Neutral 900" 
+        },
+        { 
+          "slug": "success", 
+          "color": "#22C55E", 
+          "name": "Success" 
+        },
+        { 
+          "slug": "warning", 
+          "color": "#F59E0B", 
+          "name": "Warning" 
+        },
+        { 
+          "slug": "error", 
+          "color": "#EF4444", 
+          "name": "Error" 
+        },
+        { 
+          "slug": "info", 
+          "color": "#06B6D4", 
+          "name": "Info" 
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "primary-gradient",
+          "gradient": "linear-gradient(135deg, #14B8A6 0%, #0891B2 100%)",
+          "name": "Primary Gradient"
+        },
+        {
+          "slug": "warm-gradient",
+          "gradient": "linear-gradient(135deg, #F97316 0%, #FB923C 100%)",
+          "name": "Warm Gradient"
+        },
+        {
+          "slug": "cool-gradient",
+          "gradient": "linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)",
+          "name": "Cool Gradient"
+        },
+        {
+          "slug": "sunset-gradient",
+          "gradient": "linear-gradient(135deg, #14B8A6 0%, #F97316 100%)",
+          "name": "Sunset Gradient"
+        },
+        {
+          "slug": "ocean-gradient",
+          "gradient": "linear-gradient(135deg, #0891B2 0%, #06B6D4 100%)",
+          "name": "Ocean Gradient"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)"
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    },
+    "color": {
+      "background": "var(--wp--preset--color--neutral-100)",
+      "text": "var(--wp--preset--color--neutral-900)"
+    },
+    "elements": {
+      "button": {
+        "border": {
+          "radius": "50px"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.875rem",
+            "right": "2rem",
+            "bottom": "0.875rem",
+            "left": "2rem"
+          }
+        },
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "var(--wp--preset--color--neutral-100)"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--secondary)"
+          }
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--neutral-700)"
+          }
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontWeight": "800",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "700",
+          "lineHeight": "1.2"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "600",
+          "lineHeight": "1.3"
+        }
+      }
+    }
+  }
+}
