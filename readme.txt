@@ -1,7 +1,7 @@
 === Versana ===
 Contributors: junaidte14
 Requires at least: 6.0
-Tested up to: 6.9.2
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.1
 License: GPLv2 or later

@@ -22,7 +22,7 @@ function versana_enqueue_dynamic_assets() {
      * Blog Specific Assets
      * Load on: blog index, archives, search, single posts
      */
-    if ( is_home() || is_archive() || is_search() || is_singular() || is_404()) {
+    if ( is_home() || is_archive() || is_search() || is_singular()) {
         wp_enqueue_style(
             'versana-blog',
             get_template_directory_uri() . '/assets/css/blog.css',

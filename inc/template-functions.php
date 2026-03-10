@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function versana_body_classes( $classes ) {
     $classes[] = 'header-layout-default';
     // Blog Layout (on blog/archive pages)
-    if ( is_home() || is_archive() || is_search() || is_singular() || is_404() ) {
+    if ( is_home() || is_archive() || is_search() || is_singular() ) {
         $classes[] = 'has-sidebar sidebar-right';
     }
     // Blog Layout (on blog/home blog pages)
