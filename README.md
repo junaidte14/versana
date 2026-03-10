@@ -1,6 +1,6 @@
 # Versana – WordPress Block Theme
 
-**Versana** is a modern and versatile WordPress block theme built with full-site editing in mind. Ideal for blogs, portfolios, WooCommerce stores, and documentation sites.
+**Versana** is a modern and versatile WordPress block theme built with full-site editing in mind. Ideal for blogs, portfolios, content creators, and documentation sites.
 
 ## Features
 - FSE support (templates, template parts)

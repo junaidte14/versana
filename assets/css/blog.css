@@ -1,7 +1,3 @@
-main.front-page {
-    margin-top: 0;
-}
-
 /**
  * Blog Layouts - Production Ready
  * Maximizes Gutenberg/theme.json, minimal custom styles
@@ -227,144 +223,6 @@ main.front-page {
 }
 
 /* ==========================================================================
-   Multi-Column Grid Layout (Custom Template)
-   ========================================================================== */
-
-/**
- * Grid Container Class
- * Applied via template or block class
- */
-.blog-layout-grid .wp-block-post-template,
-.archive-layout-grid .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--wp--preset--spacing--50, 2rem);
-}
-
-/* 2 Column Grid */
-.blog-layout-2col .wp-block-post-template,
-.archive-layout-2col .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--wp--preset--spacing--50, 2rem);
-}
-
-/* 3 Column Grid */
-.blog-layout-3col .wp-block-post-template,
-.archive-layout-3col .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--wp--preset--spacing--50, 2rem);
-}
-
-/**
- * Grid Post Cards
- * Card-style with hover effects
- */
-.blog-layout-grid .wp-block-post-template > li,
-.blog-layout-2col .wp-block-post-template > li,
-.blog-layout-3col .wp-block-post-template > li,
-.archive-layout-grid .wp-block-post-template > li,
-.archive-layout-2col .wp-block-post-template > li,
-.archive-layout-3col .wp-block-post-template > li {
-    background: var(--wp--preset--color--neutral-100, #fff);
-    border: 1px solid var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.1));
-    border-radius: 12px;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-layout-grid .wp-block-post-template > li:hover,
-.blog-layout-2col .wp-block-post-template > li:hover,
-.blog-layout-3col .wp-block-post-template > li:hover,
-.archive-layout-grid .wp-block-post-template > li:hover,
-.archive-layout-2col .wp-block-post-template > li:hover,
-.archive-layout-3col .wp-block-post-template > li:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    border-color: var(--wp--preset--color--neutral-300, rgba(0, 0, 0, 0.15));
-}
-
-/**
- * Grid Card Content Padding
- */
-.blog-layout-grid .wp-block-post-featured-image,
-.blog-layout-2col .wp-block-post-featured-image,
-.blog-layout-3col .wp-block-post-featured-image,
-.archive-layout-grid .wp-block-post-featured-image,
-.archive-layout-2col .wp-block-post-featured-image,
-.archive-layout-3col .wp-block-post-featured-image {
-    margin: 0;
-    border-radius: 0;
-}
-
-.blog-layout-grid .wp-block-post-title,
-.blog-layout-grid .post-meta,
-.blog-layout-grid .wp-block-post-excerpt,
-.blog-layout-2col .wp-block-post-title,
-.blog-layout-2col .post-meta,
-.blog-layout-2col .wp-block-post-excerpt,
-.blog-layout-3col .wp-block-post-title,
-.blog-layout-3col .post-meta,
-.blog-layout-3col .wp-block-post-excerpt,
-.archive-layout-grid .wp-block-post-title,
-.archive-layout-grid .post-meta,
-.archive-layout-grid .wp-block-post-excerpt,
-.archive-layout-2col .wp-block-post-title,
-.archive-layout-2col .post-meta,
-.archive-layout-2col .wp-block-post-excerpt,
-.archive-layout-3col .wp-block-post-title,
-.archive-layout-3col .post-meta,
-.archive-layout-3col .wp-block-post-excerpt {
-    padding-inline: var(--wp--preset--spacing--40, 1.5rem);
-}
-
-.blog-layout-grid .post-meta,
-.blog-layout-2col .post-meta,
-.blog-layout-3col .post-meta,
-.archive-layout-grid .post-meta,
-.archive-layout-2col .post-meta,
-.archive-layout-3col .post-meta{
-    margin-top: var(--wp--preset--spacing--40, 1.5rem);
-}
-
-.blog-layout-grid .wp-block-post-excerpt,
-.blog-layout-2col .wp-block-post-excerpt,
-.blog-layout-3col .wp-block-post-excerpt,
-.archive-layout-grid .wp-block-post-excerpt,
-.archive-layout-2col .wp-block-post-excerpt,
-.archive-layout-3col .wp-block-post-excerpt {
-    padding-block-end: var(--wp--preset--spacing--40, 1.5rem);
-}
-
-/**
- * Grid Featured Image Aspect Ratio
- */
-.blog-layout-grid .wp-block-post-featured-image,
-.blog-layout-2col .wp-block-post-featured-image,
-.blog-layout-3col .wp-block-post-featured-image,
-.archive-layout-grid .wp-block-post-featured-image,
-.archive-layout-2col .wp-block-post-featured-image,
-.archive-layout-3col .wp-block-post-featured-image {
-    aspect-ratio: 16 / 9;
-}
-
-.blog-layout-grid .wp-block-post-featured-image img,
-.blog-layout-2col .wp-block-post-featured-image img,
-.blog-layout-3col .wp-block-post-featured-image img,
-.archive-layout-grid .wp-block-post-featured-image img,
-.archive-layout-2col .wp-block-post-featured-image img,
-.archive-layout-3col .wp-block-post-featured-image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-/* ==========================================================================
    Sidebar Layouts - Three Variations
    ========================================================================== */
 
@@ -386,29 +244,6 @@ main.front-page {
 
 .has-sidebar.sidebar-right .blog-archive-group > *:first-child{
     width: 100%;
-}
-
-/**
- * Left Sidebar
- */
-.has-sidebar.sidebar-left .blog-archive-group{
-    grid-template-columns: 300px 1fr;
-}
-
-.has-sidebar.sidebar-left .blog-sidebar {
-    order: -1;
-}
-
-/**
- * No Sidebar (Full Width)
- */
-.sidebar-none .wp-block-query {
-    max-width: var(--wp--style--global--wide-size, 1200px);
-    margin-inline: auto;
-}
-
-.sidebar-none .blog-sidebar{
-    display: none;
 }
 
 /**
@@ -515,8 +350,7 @@ main.front-page {
  * Tablet: Stack Sidebars
  */
 @media (max-width: 1024px) {
-    .has-sidebar.sidebar-right .blog-archive-group,
-    .has-sidebar.sidebar-left .blog-archive-group{
+    .has-sidebar.sidebar-right .blog-archive-group{
         grid-template-columns: 1fr;
     }
     
@@ -526,36 +360,9 @@ main.front-page {
 }
 
 /**
- * Tablet: 2 Column Grid
- */
-@media (min-width: 782px) and (max-width: 1024px) {
-    .blog-layout-grid .wp-block-post-template,
-    .blog-layout-3col .wp-block-post-template {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .archive-layout-grid .wp-block-post-template,
-    .archive-layout-3col .wp-block-post-template {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/**
  * Mobile: Single Column
  */
 @media (max-width: 781px) {
-    .blog-layout-grid .wp-block-post-template,
-    .blog-layout-2col .wp-block-post-template,
-    .blog-layout-3col .wp-block-post-template {
-        grid-template-columns: 1fr;
-    }
-
-    .archive-layout-grid .wp-block-post-template,
-    .archive-layout-2col .wp-block-post-template,
-    .archive-layout-3col .wp-block-post-template {
-        grid-template-columns: 1fr;
-    }
-    
     .has-sidebar .blog-archive-group {
         gap: var(--wp--preset--spacing--40, 2rem);
     }
@@ -591,26 +398,9 @@ main.front-page {
  */
 @media (prefers-reduced-motion: reduce) {
     .wp-block-post-featured-image img,
-    .blog-layout-grid .wp-block-post-template > li,
-    .blog-layout-2col .wp-block-post-template > li,
-    .blog-layout-3col .wp-block-post-template > li,
     .wp-block-query-pagination a {
         transition: none;
     }
-}
-
-/**
- * Skip to Content Link
- */
-.skip-to-content:focus {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: var(--wp--preset--spacing--30, 1rem);
-    background: var(--wp--preset--color--neutral-900, #111);
-    color: var(--wp--preset--color--neutral-100, #fff);
-    text-decoration: none;
-    z-index: 10000;
 }
 
 /* ==========================================================================
@@ -623,15 +413,8 @@ main.front-page {
         display: none;
     }
     
-    .has-sidebar.sidebar-right .blog-archive-group,
-    .has-sidebar.sidebar-left .blog-archive-group{
+    .has-sidebar.sidebar-right .blog-archive-group{
         grid-template-columns: 1fr;
-    }
-    
-    .blog-layout-grid .wp-block-post-template,
-    .blog-layout-2col .wp-block-post-template,
-    .blog-layout-3col .wp-block-post-template {
-        display: block;
     }
     
     .wp-block-post-template > li {

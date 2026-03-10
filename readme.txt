@@ -1,12 +1,12 @@
 === Versana ===
 Contributors: junaidte14
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.9.2
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks, accessibility-ready
+Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks
 
 A modern, performance-focused WordPress block theme optimized for bloggers and content creators.
 
@@ -17,14 +17,10 @@ Versana is a lightweight, versatile full site editing (FSE) block theme designed
 = Key Features =
 
 * **Full Site Editing (FSE)**: Complete control over your site's appearance using the WordPress Site Editor
-* **Multiple Blog Layouts**: Choose from list view, 2-column grid, or 3-column grid layouts
-* **Flexible Sidebars**: Position sidebars on the left, right, or remove them entirely
-* **Sticky Header Option**: Keep your navigation accessible as users scroll
-* **Performance Optimized**: Minimal custom CSS, and performance enhancements
+* **Two Header Layouts**: Pre-designed template parts with flexible layouts
 * **Multiple Footer Variations**: 3 pre-designed footer templates to choose from
-* **Analytics Integration**: Easy setup for Google Analytics, Tag Manager, and Facebook Pixel
+* **Performance Optimized**: Minimal custom CSS and performance enhancements
 * **Translation Ready**: Fully prepared for multilingual sites
-* **Accessibility Ready**: Built with accessibility best practices in mind
 
 = Perfect For =
 
@@ -46,14 +42,14 @@ Versana follows a "theme.json first" approach, relying primarily on WordPress co
 
 = Customization =
 
-All design customization (colors, typography, spacing) is done through the WordPress Site Editor:
+All design customization (colors, typography, spacing, layouts) is done through the WordPress Site Editor:
 
 1. Go to **Appearance → Editor**
 2. Customize colors, fonts, and spacing using theme presets
 3. Edit templates and template parts
 4. Create and manage block patterns
 
-Advanced options (blog layouts, footer, header, analytics etc.) are available at **Appearance → Theme Options**.
+Advanced customization can be added through a companion plugin if needed.
 
 == Installation ==
 
@@ -77,7 +73,7 @@ Advanced options (blog layouts, footer, header, analytics etc.) are available at
 = After Activation =
 
 1. Go to **Appearance → Editor** to customize your site's design
-2. Go to **Appearance → Theme Options** to configure blog layouts and features
+2. Customize templates and template parts as needed
 3. Start creating content!
 
 == Frequently Asked Questions ==
@@ -96,7 +92,7 @@ Absolutely! Use the Site Editor (**Appearance → Editor**) to customize all col
 
 = How do I change the blog layout? =
 
-Go to **Appearance → Theme Options → Blog** and select your preferred layout (List, 2-Column Grid, or 3-Column Grid).
+You can customize blog layouts by editing templates in the Site Editor (**Appearance → Editor → Templates**). The theme includes pre-designed templates that you can customize or duplicate.
 
 = Is the theme translation ready? =
 
@@ -122,6 +118,15 @@ Yes! Go to **Appearance → Editor → Template Parts → Footer** to customize 
 For support questions, please visit the support forum on WordPress.org or contact us through our website at https://codoplex.com/contact
 
 == Changelog ==
+
+= 1.0.1 - 2026-03-10 =
+* Fixed: Removed Theme URI as per WordPress.org requirements
+* Fixed: Updated "Tested up to" version to the latest WordPress
+* Fixed: Made all text strings in hero-banner.php translation-ready
+* Fixed: Removed admin theme options page (all customization now via Site Editor)
+* Fixed: Removed accessibility-ready tag (requires separate review process)
+* Improved: Simplified theme structure for better WordPress.org compliance
+* Note: Advanced options will be added via companion plugin
 
 = 1.0.0 - 2026-02-07 =
 * Initial release
