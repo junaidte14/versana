@@ -12,7 +12,7 @@
     <div class="wp-block-group alignwide blog-archive-group">
 
         <!-- wp:query {"queryId":1,"query":{"perPage":12,"postType":"post","order":"desc","orderBy":"date","sticky":"exclude","inherit":true},"align":"wide","layout":{"type":"constrained"}} -->
-        <div class="wp-block-query alignwide">
+        <div class="wp-block-query alignwide versana-content">
 
             <!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0"}}} -->
 

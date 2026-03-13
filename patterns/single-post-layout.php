@@ -8,14 +8,23 @@
  */
 ?>
 <!-- wp:group {"tagName":"main","className":"blog-archive","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group blog-archive"
-    style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl)">
+<main class="wp-block-group blog-archive" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl)">
 
     <!-- wp:group {"align":"wide","className":"blog-archive-group"} -->
     <div class="wp-block-group alignwide blog-archive-group">
-
+        
         <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}},"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--lg)">
+        <div class="wp-block-group alignwide versana-content" style="margin-bottom:var(--wp--preset--spacing--lg)">
+            <?php
+                /**
+                 * Extensibility Hook: Add content before main content
+                 *
+                 * Allows other plugins to add more content
+                 *
+                 * @since 1.0.0
+                 */
+                do_action( 'versana_before_content' );
+            ?>
 
             <!-- wp:post-featured-image {"align":"wide","aspectRatio":"16/9","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}},"border":{"radius":"12px"}}} /-->
 
@@ -65,6 +74,17 @@
                 <!-- /wp:group -->
 
                 <!-- wp:post-author-biography {"align":"full","showHeading":true,"layout":{"type":"default"}} /-->
+
+                <?php
+                    /**
+                     * Extensibility Hook: Add content before main content
+                     *
+                     * Allows other plugins to add more content
+                     *
+                     * @since 1.0.0
+                     */
+                    do_action( 'versana_after_content' );
+                ?>
 
                 <!-- wp:comments -->
                 <div class="wp-block-comments">
