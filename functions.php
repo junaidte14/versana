@@ -14,7 +14,7 @@ function versana_register_pattern_categories() {
         array( 'label' => __( 'Versana Layout', 'versana' ) )
     );
     register_block_pattern_category(
-        'versana-header',
+        'versana-headers',
         array( 'label' => __( 'Versana Headers', 'versana' ) )
     );
     register_block_pattern_category(
@@ -26,8 +26,6 @@ function versana_register_pattern_categories() {
 // Include core files
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/template-functions.php';
-// Versana Companion Plugin Checker
-require_once get_template_directory() . '/inc/versana-companion-installer.php';
 
 /**
  * Theme Setup

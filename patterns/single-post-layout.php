@@ -21,7 +21,7 @@
                  *
                  * Allows other plugins to add more content
                  *
-                 * @since 1.0.0
+                 * @since 1.0.2
                  */
                 do_action( 'versana_before_content' );
             ?>
@@ -81,7 +81,7 @@
                      *
                      * Allows other plugins to add more content
                      *
-                     * @since 1.0.0
+                     * @since 1.0.2
                      */
                     do_action( 'versana_after_content' );
                 ?>

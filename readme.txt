@@ -3,7 +3,7 @@ Contributors: junaidte14
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks
@@ -118,6 +118,14 @@ Yes! Go to **Appearance → Editor → Template Parts → Footer** to customize 
 For support questions, please visit the support forum on WordPress.org or contact us through our website at https://codoplex.com/contact
 
 == Changelog ==
+
+= 1.0.2 - 2026-03-15 =
+* Fixed: Tested up to is changed to have a major versions only (i.e. 6.9)
+* Fixed: The admin notice for Versana Companion plugin is completely removed
+* Fixed: The companion plugin installer script is completely removed until the companion plugin is approved in the WordPress plugins repository. Once approved, it will be added back using the TGM Plugin library as recommended
+* Added: Action hooks are added before and after the content
+* Added: Templates are made translation ready using the block patterns
+* Added: Three block pattern categories were added
 
 = 1.0.1 - 2026-03-10 =
 * Fixed: Removed Theme URI as per WordPress.org requirements
