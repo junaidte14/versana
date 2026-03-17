@@ -19,7 +19,7 @@ function versana_register_pattern_categories() {
     );
     register_block_pattern_category(
         'versana-patterns',
-        array( 'label' => __( 'Versana Patterns', 'versana-companion' ) )
+        array( 'label' => __( 'Versana Patterns', 'versana' ) )
     );
     register_block_pattern_category(
         'versana-pages',

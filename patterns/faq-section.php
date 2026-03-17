@@ -24,30 +24,31 @@
     <!-- /wp:paragraph -->
 
     <?php
+    // Use placeholder-based translations
     $faqs = [
         [
-            'q' => 'What makes your service different from competitors?',
-            'a' => 'We focus on three key differentiators: lightning-fast performance, beautiful design out of the box, and exceptional customer support. Our platform is built with modern technologies and best practices, ensuring your site is not only functional but also future-proof.',
+            'q' => __( 'What makes your service different from competitors?', 'versana' ),
+            'a' => __( 'We focus on three key differentiators: lightning-fast performance, beautiful design out of the box, and exceptional customer support. Our platform is built with modern technologies and best practices, ensuring your site is not only functional but also future-proof.', 'versana' ),
         ],
         [
-            'q' => 'Do you offer a free trial?',
-            'a' => 'Yes! We offer a 14-day free trial with full access to all features. No credit card required to start. If you\'re not completely satisfied, you can cancel anytime during the trial period.',
+            'q' => __( 'Do you offer a free trial?', 'versana' ),
+            'a' => __( 'Yes! We offer a 14-day free trial with full access to all features. No credit card required to start. If you\'re not completely satisfied, you can cancel anytime during the trial period.', 'versana' ),
         ],
         [
-            'q' => 'How long does it take to set up?',
-            'a' => 'Most users are up and running within minutes. Our one-click demo import feature allows you to have a fully functional website immediately. You can then customize it to match your brand and content needs.',
+            'q' => __( 'How long does it take to set up?', 'versana' ),
+            'a' => __( 'Most users are up and running within minutes. Our one-click demo import feature allows you to have a fully functional website immediately. You can then customize it to match your brand and content needs.', 'versana' ),
         ],
         [
-            'q' => 'Can I upgrade or downgrade my plan later?',
-            'a' => 'Absolutely! You can change your plan at any time. Upgrades take effect immediately, and for downgrades, the change will occur at the end of your current billing cycle. There are no penalties for changing plans.',
+            'q' => __( 'Can I upgrade or downgrade my plan later?', 'versana' ),
+            'a' => __( 'Absolutely! You can change your plan at any time. Upgrades take effect immediately, and for downgrades, the change will occur at the end of your current billing cycle. There are no penalties for changing plans.', 'versana' ),
         ],
         [
-            'q' => 'What kind of support do you provide?',
-            'a' => 'We offer email support for all plans, with priority support for Professional and Enterprise customers. Our support team typically responds within 24 hours, and we maintain extensive documentation and video tutorials for self-service help.',
+            'q' => __( 'What kind of support do you provide?', 'versana' ),
+            'a' => __( 'We offer email support for all plans, with priority support for Professional and Enterprise customers. Our support team typically responds within 24 hours, and we maintain extensive documentation and video tutorials for self-service help.', 'versana' ),
         ],
         [
-            'q' => 'Is my data secure?',
-            'a' => 'Security is our top priority. We use industry-standard encryption, regular security audits, automated backups, and comply with all major data protection regulations. Your data is stored securely and is never shared with third parties.',
+            'q' => __( 'Is my data secure?', 'versana' ),
+            'a' => __( 'Security is our top priority. We use industry-standard encryption, regular security audits, automated backups, and comply with all major data protection regulations. Your data is stored securely and is never shared with third parties.', 'versana' ),
         ],
     ];
 
@@ -55,11 +56,11 @@
     ?>
         <!-- wp:details {"showContent":false,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|md"}}}} -->
         <details class="wp-block-details" style="margin-bottom:var(--wp--preset--spacing--md)">
-            <summary><strong><?php echo esc_html__( $faq['q'], 'versana' ); ?></strong></summary>
+            <summary><strong><?php echo esc_html( $faq['q'] ); ?></strong></summary>
 
             <!-- wp:paragraph -->
             <p style="margin-top:var(--wp--preset--spacing--sm)">
-                <?php echo esc_html__( $faq['a'], 'versana' ); ?>
+                <?php echo esc_html( $faq['a'] ); ?>
             </p>
             <!-- /wp:paragraph -->
         </details>
