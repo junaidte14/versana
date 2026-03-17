@@ -1,0 +1,162 @@
+{
+  "version": 2,
+  "title": "Business",
+  "settings": {
+    "color": {
+      "palette": [
+        { 
+          "slug": "primary", 
+          "color": "#6366F1", 
+          "name": "Primary" 
+        },
+        { 
+          "slug": "secondary", 
+          "color": "#8B5CF6", 
+          "name": "Secondary" 
+        },
+        { 
+          "slug": "tertiary", 
+          "color": "#1E293B", 
+          "name": "Tertiary" 
+        },
+        { 
+          "slug": "accent", 
+          "color": "#F97316", 
+          "name": "Accent" 
+        },
+        { 
+          "slug": "neutral-100", 
+          "color": "#FFFFFF", 
+          "name": "Neutral 100" 
+        },
+        { 
+          "slug": "neutral-200", 
+          "color": "#F8FAFC", 
+          "name": "Neutral 200" 
+        },
+        { 
+          "slug": "neutral-300", 
+          "color": "#E2E8F0", 
+          "name": "Neutral 300" 
+        },
+        { 
+          "slug": "neutral-700", 
+          "color": "#334155", 
+          "name": "Neutral 700" 
+        },
+        { 
+          "slug": "neutral-900", 
+          "color": "#0F172A", 
+          "name": "Neutral 900" 
+        },
+        { 
+          "slug": "success", 
+          "color": "#10B981", 
+          "name": "Success" 
+        },
+        { 
+          "slug": "warning", 
+          "color": "#F59E0B", 
+          "name": "Warning" 
+        },
+        { 
+          "slug": "error", 
+          "color": "#EF4444", 
+          "name": "Error" 
+        },
+        { 
+          "slug": "info", 
+          "color": "#06B6D4", 
+          "name": "Info" 
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "primary-gradient",
+          "gradient": "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)",
+          "name": "Primary Gradient"
+        },
+        {
+          "slug": "warm-gradient",
+          "gradient": "linear-gradient(135deg, #F97316 0%, #FB923C 100%)",
+          "name": "Warm Gradient"
+        },
+        {
+          "slug": "cool-gradient",
+          "gradient": "linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)",
+          "name": "Cool Gradient"
+        },
+        {
+          "slug": "sunset-gradient",
+          "gradient": "linear-gradient(135deg, #F97316 0%, #FB7185 100%)",
+          "name": "Sunset Gradient"
+        },
+        {
+          "slug": "ocean-gradient",
+          "gradient": "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)",
+          "name": "Ocean Gradient"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)"
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "button": {
+        "border": {
+          "radius": "6px"
+        },
+        "shadow": "var(--wp--preset--shadow--sm)",
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "var(--wp--preset--color--neutral-100)"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--secondary)"
+          }
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--neutral-700)"
+          }
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontWeight": "700",
+          "lineHeight": "1.1"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "700",
+          "lineHeight": "1.2"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "600",
+          "lineHeight": "1.3"
+        }
+      }
+    }
+  }
+}
