@@ -17,7 +17,7 @@
          */
         do_action( 'versana_before_content' );
     ?>
-    <!-- wp:post-title {"level":1,"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|lg"}}}} /-->
+    <!-- wp:post-title {"level":1,"align":"full","className":"versana-page-title","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|lg"}}}} /-->
     <!-- wp:post-content {"layout":{"type":"default"}} /-->
     <?php
         /**
