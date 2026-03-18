@@ -133,7 +133,7 @@
     color: var(--wp--preset--color--neutral-900); /* Always dark text */
     border: 2px solid currentColor; /* Border matches the text color */
     border-radius: 4px;
-    font-size: var(--wp--preset--font-size--sm);
+    font-size: var(--wp--preset--spacing--xs);
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;

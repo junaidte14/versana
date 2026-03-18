@@ -3,7 +3,7 @@ Contributors: junaidte14
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks
@@ -118,6 +118,11 @@ Yes! Go to **Appearance → Editor → Template Parts → Footer** to customize 
 For support questions, please visit the support forum on WordPress.org or contact us through our website at https://codoplex.com/contact
 
 == Changelog ==
+
+= 1.0.4 - 2026-03-18 =
+* Added: Styles for hiding page titles are added
+* Updated: The categories font size for blog posts are updated
+* Updated: The latest articles block pattern is updated
 
 = 1.0.3 - 2026-03-17 =
 * Added: Utility classes and accessibility styles are added
