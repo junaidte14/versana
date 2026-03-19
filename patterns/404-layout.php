@@ -2,7 +2,9 @@
 /**
  * Title: 404 Layout
  * Slug: versana/404-layout
- * Categories: versana-layout
+ * Categories: versana-patterns
+ * Keywords: 404, not found
+ * Description: A 404 page layout with search and helpful links.
  */
 ?>
 
@@ -95,5 +97,3 @@
 
 </main>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"versana","tagName":"footer"} /-->

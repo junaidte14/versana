@@ -119,10 +119,14 @@ For support questions, please visit the support forum on WordPress.org or contac
 
 == Changelog ==
 
-= 1.0.4 - 2026-03-18 =
-* Added: Styles for hiding page titles are added
+= 1.0.4 - 2026-03-19 =
+* Fixed: The 404 block pattern is fixed and extra footer is removed
 * Updated: The categories font size for blog posts are updated
-* Updated: The latest articles block pattern is updated
+* Updated: The latest articles, header, and page-layout block patterns are updated
+* Updated: The theme screenshot is updated
+* Deleted: Versana Layouts block patterns category is deleted
+* Added: Styles for showing/hiding page titles are added
+* Added: A new block pattern is added for home page design matching exactly as the theme screenshot
 
 = 1.0.3 - 2026-03-17 =
 * Added: Utility classes and accessibility styles are added

@@ -2,7 +2,9 @@
 /**
  * Title: Page Layout
  * Slug: versana/page-layout
- * Categories: versana-layout
+ * Categories: versana-patterns
+ * Keywords: page
+ * Description: A standard page layout with before and after action hooks.
  */
 ?>
 <!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->

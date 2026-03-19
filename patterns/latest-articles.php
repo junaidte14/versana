@@ -22,7 +22,7 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"align":"wide"} -->
+    <!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide"} -->
     <div class="wp-block-query alignwide">
         <!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|lg"}},"layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
         <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}},"border":{"radius":"12px","width":"1px","color":"var:preset|color|neutral-300"}},"backgroundColor":"neutral-100","layout":{"type":"constrained"}} -->

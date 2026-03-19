@@ -430,6 +430,10 @@ main .entry-content {
     display: none;
 }
 
-body.versana-hide-page-title .versana-page-title{
+.versana-page-title{
     display: none;
+}
+
+body.versana-show-page-title .versana-page-title{
+    display: block;
 }

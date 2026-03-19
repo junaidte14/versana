@@ -21,10 +21,6 @@ function versana_register_pattern_categories() {
         'versana-patterns',
         array( 'label' => __( 'Versana Patterns', 'versana' ) )
     );
-    register_block_pattern_category(
-        'versana-pages',
-        array( 'label' => __( 'Versana Layout', 'versana' ) )
-    );
 }
 
 // Include core files
