@@ -7,29 +7,19 @@
  * Description: A standard page layout with before and after action hooks.
  */
 ?>
-<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group versana-content">
-    <?php
-        /**
-         * Extensibility Hook: Add content before main content
-         *
-         * Allows other plugins to add more content
-         *
-         * @since 1.0.2
-         */
-        do_action( 'versana_before_content' );
-    ?>
-    <!-- wp:post-title {"level":1,"align":"full","className":"versana-page-title","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|lg"}}}} /-->
-    <!-- wp:post-content {"layout":{"type":"default"}} /-->
-    <?php
-        /**
-         * Extensibility Hook: Add content after main content
-         *
-         * Allows other plugins to add more content
-         *
-         * @since 1.0.2
-         */
-        do_action( 'versana_after_content' );
-    ?>
+
+    <?php do_action( 'versana_before_content' ); ?>
+
+    <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide">
+        <!-- wp:post-title {"level":1,"align":"wide","className":"versana-page-title"} /-->
+        <!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <?php do_action( 'versana_after_content' ); ?>
+
 </main>
 <!-- /wp:group -->
