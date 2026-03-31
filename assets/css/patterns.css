@@ -262,3 +262,96 @@
     color: #666;
     font-style: italic;
 }
+
+/* ============================================
+   Split Header with CTA Styles
+   ============================================ */
+
+.versana-split-header {
+    position: relative;
+    z-index: 997;
+}
+
+/* Top bar hover effects */
+.versana-split-header a {
+    transition: all 0.2s ease;
+}
+
+.versana-split-header a:hover {
+    transform: translateY(-1px);
+}
+
+/* Navigation styling */
+.versana-split-nav p {
+    margin: 0;
+    position: relative;
+}
+
+.versana-split-nav p a {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+/* Animated underline on hover */
+.versana-split-nav p a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--wp--preset--color--primary);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.versana-split-nav p a:hover::after {
+    width: 100%;
+}
+
+/* Button hover effects */
+.versana-split-header .wp-block-button__link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.versana-split-header .wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.versana-split-header .is-style-outline .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--neutral-100);
+    color: var(--wp--preset--color--neutral-900);
+}
+
+/* Social icons hover */
+.versana-split-header .wp-social-link {
+    transition: all 0.2s ease;
+}
+
+.versana-split-header .wp-social-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .versana-split-nav {
+        display: none;
+    }
+    
+    .versana-split-header .wp-block-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .versana-split-header .wp-block-social-links {
+        display: none;
+    }
+}
+
+/* Smooth transitions */
+.versana-split-header * {
+    transition: all 0.2s ease;
+}
