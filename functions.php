@@ -26,6 +26,7 @@ function versana_register_pattern_categories() {
 // Include core files
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/template-functions.php';
+require_once get_template_directory() . '/inc/tgm-config.php';
 
 /**
  * Theme Setup

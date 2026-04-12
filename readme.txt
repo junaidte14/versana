@@ -3,7 +3,7 @@ Contributors: junaidte14
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks
@@ -118,6 +118,10 @@ Yes! Go to **Appearance → Editor → Template Parts → Footer** to customize 
 For support questions, please visit the support forum on WordPress.org or contact us through our website at https://codoplex.com/contact
 
 == Changelog ==
+
+= 1.0.7 - 2026-04-12 =
+* Added: Top and Bottom padding on navigation menu items
+* Added: TGMPA support for the installation of the Versana Companion plugin
 
 = 1.0.6 - 2026-03-31 =
 * Added: A new style variation is added
