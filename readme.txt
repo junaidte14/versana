@@ -119,6 +119,10 @@ For support questions, please visit the support forum on WordPress.org or contac
 
 == Changelog ==
 
+= 1.0.8 - 2026-04-12 =
+* Fixed: Top and Bottom padding issue on navigation menu items in the footer
+* Added: TGMPA support for the installation of the Versana Companion plugin
+
 = 1.0.7 - 2026-04-12 =
 * Added: Top and Bottom padding on navigation menu items
 * Added: TGMPA support for the installation of the Versana Companion plugin

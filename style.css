@@ -7,7 +7,7 @@ Description: A modern, performance-focused WordPress block theme. Features full 
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: versana
@@ -438,7 +438,7 @@ body.versana-show-page-title .versana-page-title{
     display: block;
 }
 
-.wp-block-navigation ul li {
+header .wp-block-navigation ul li {
     list-style: none;
     padding: 20px 0;
 }
