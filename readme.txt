@@ -3,12 +3,12 @@ Contributors: junaidte14
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, full-site-editing, block-patterns, block-styles, custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, wide-blocks
 
-A modern, performance-focused WordPress block theme optimized for bloggers and content creators.
+Versana is a performance-focused Full Site Editing (FSE) block theme engineered for speed, versatility, and modern web standards. Built to leverage the full power of the WordPress block editor, Versana features a lightweight architecture with minimal custom CSS to ensure ultra-fast load times and optimal SEO. When paired with the approved Versana Companion plugin, the theme unlocks an expanded suite of professional features, including one-click demo imports, sticky headers, a back-to-top button, and a reading progress indicator. The theme offers flexible blog sidebar layouts—including 2/3 column grids and left, right, or no-sidebar options—alongside integrated breadcrumbs and related posts to enhance user engagement. With a rich library of pre-designed block patterns, multiple style variations, and advanced optimization features, Versana provides a clean, sophisticated aesthetic with the robust functionality required for professional-grade site building.
 
 == Description ==
 
@@ -118,6 +118,9 @@ Yes! Go to **Appearance → Editor → Template Parts → Footer** to customize 
 For support questions, please visit the support forum on WordPress.org or contact us through our website at https://codoplex.com/contact
 
 == Changelog ==
+
+= 1.0.9 - 2026-04-16 =
+* Updated: Theme description is updated to include all supporting features
 
 = 1.0.8 - 2026-04-12 =
 * Fixed: Top and Bottom padding issue on navigation menu items in the footer
